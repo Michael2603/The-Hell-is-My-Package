@@ -8,6 +8,8 @@ public class EmployeeController : MonoBehaviour
     Transform transform;
     Animator animator;
     [SerializeField] float moveSpeed;
+    [SerializeField] string state = "TrackingPackage";
+    Transform boxPos;
     
     void Start()
     {
@@ -20,14 +22,35 @@ public class EmployeeController : MonoBehaviour
     {
         if (Mathf.Abs(rigidbody2d.velocity.x) > 0 || Mathf.Abs(rigidbody2d.velocity.y) > 0)
             animator.SetFloat("Velocity", 1);
-        TrackBox();
+        
+        switch (state)
+        {
+            case "TrackingPackage":
+                TrackBox();
+            break;
+            case "PackingBox":
+                PackingBox();
+            break;
+        }
     }
 
     void TrackBox()
     {
         Collider2D checkZone = Physics2D.OverlapCircle(rigidbody2d.position, 10, 1 << LayerMask.NameToLayer("Box"));
         if (checkZone != null)
-            Debug.Log("ACHEI UMA CAAAAXA PO");
+        {
+            state = "PackingBox";
+            boxPos = checkZone.gameObject.GetComponent<Transform>();
+            Debug.Log(boxPos);
+        }else
+        {
+            boxPos = null;
+        }
+    }
+
+    void PackingBox()
+    {
+        Vector2.MoveTowards(transform.position, boxPos.position, moveSpeed);
     }
 
     void OnDrawGizmosSelected()
