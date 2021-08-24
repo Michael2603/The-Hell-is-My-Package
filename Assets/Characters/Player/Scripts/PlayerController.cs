@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rigidbody2d;
     Transform transform;
     [SerializeField] float moveSpeed;
+
+    int health = 5;
     
     void Start()
     {
@@ -17,5 +19,11 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         rigidbody2d.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed);
+    }
+
+    public void Hit(int amount)
+    {
+        this.health -= amount;
+        Debug.Log("Crap, I have only " + health + " left!");
     }
 }

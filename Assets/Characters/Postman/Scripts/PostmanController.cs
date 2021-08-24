@@ -66,15 +66,15 @@ public class PostmanController : MonoBehaviour
 
         // If a wall is detected, the postman will try to avoid it
         bool upperWall = Physics2D.Raycast( transform.position, upperCast, 10, 1 << LayerMask.NameToLayer("Wall") );
-        if (upperWall == true)
-            Debug.Log("Upper Wall");
+        if (upperWall == true){}
+            // Debug.Log("Upper Wall");
         
         bool lowerWall = Physics2D.Raycast( transform.position, lowerCast, 10, 1 << LayerMask.NameToLayer("Wall") );
-        if (lowerWall == true)
-            Debug.Log("Lower Wall");
+        if (lowerWall == true){}
+            // Debug.Log("Lower Wall");
 
-        if ( !upperWall && !lowerWall )
-            Debug.Log("No Wall");
+        if ( !upperWall && !lowerWall ){}
+            // Debug.Log("No Wall");
     }
 
     void DeliveryBox()
