@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3290981102978424571}
   - component: {fileID: 1234214916}
   - component: {fileID: 1234214917}
-  - component: {fileID: 2240140626944850580}
+  - component: {fileID: 431731559}
   m_Layer: 0
   m_Name: Postman
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3290981102978424572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.86, y: -7.27, z: 0}
-  m_LocalScale: {x: 10.1035, y: 12.79408, z: 1}
+  m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -153,7 +153,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &2240140626944850580
+--- !u!114 &431731559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,6 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56cc4202fa4c4147be3249c9ae6aeea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody2d: {fileID: 1234214916}
-  moveSpeed: 0
+  rigidbody2d: {fileID: 0}
+  moveSpeed: 4
   state: TrackingPackage
