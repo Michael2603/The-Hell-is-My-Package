@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 826621b14ef2c3444a877dc37ba19097
+guid: d48698f050af2084eb3421958fa01771
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -91,7 +91,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Camada 1 copiar 3
+  - name: 4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -100,9 +100,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 15
-      height: 17
-    spriteID: b544eab5824e1814098b05de4be54cc8
+      width: 19
+      height: 18
+    spriteID: 0316ec5a83f593d46b8b61abe0257b81
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -112,8 +112,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -22, y: -1}
-  - name: Camada 1 copiar 2
+    uvTransform: {x: 4, y: 4}
+  - name: 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -121,10 +121,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 29
-      width: 15
-      height: 16
-    spriteID: e12c7e75aca486c43bcca225b7f4a237
+      y: 30
+      width: 19
+      height: 18
+    spriteID: 77d6d5f9c3a93984ebc27cd99a4251ab
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -134,19 +134,19 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -22, y: 24}
-  - name: Camada 1 copiar
+    uvTransform: {x: 4, y: 30}
+  - name: 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 27
-      y: 28
-      width: 15
-      height: 14
-    spriteID: 7055d8d27987bc44db5d991e55277f00
+      x: 4
+      y: 56
+      width: 19
+      height: 18
+    spriteID: 74e05931aada9de4fa3ede3a8d7d7cfd
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -156,19 +156,41 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1, y: 23}
-  - name: Camada 1
+    uvTransform: {x: 4, y: 56}
+  - name: 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 27
+      x: 4
+      y: 82
+      width: 19
+      height: 18
+    spriteID: c6b308ca35bb52c45bfdf599fc17be9c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 82}
+  - name: Plano de Fundo
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
       y: 4
-      width: 15
-      height: 16
-    spriteID: 43d29631a3de0d946baee5481f2739f4
+      width: 19
+      height: 18
+    spriteID: 376ec7ba813fab5449091c69968d6b83
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -178,7 +200,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1, y: -1}
+    uvTransform: {x: 31, y: 4}
   characterData:
     bones: []
     parts: []
@@ -221,15 +243,15 @@ ScriptedImporter:
   documentAlignment: 7
   importHiddenLayers: 0
   importedTextureWidth: 64
-  importedTextureHeight: 64
-  documentSize: {x: 66, y: 27}
+  importedTextureHeight: 128
+  documentSize: {x: 19, y: 18}
   paperDollMode: 0
   keepDupilcateSpriteName: 1
   skeletonAssetReferenceID: 
   spriteCategoryList:
     categories: []
   textureActualWidth: 64
-  textureActualHeight: 64
+  textureActualHeight: 128
   spritePackingTag: 
   resliceFromLayer: 0
   mosaicPSDLayers: []
@@ -239,36 +261,43 @@ ScriptedImporter:
     isGroup: 1
     parentIndex: -1
     spriteID: 00000000000000000000000000000000
-    layerID: 7
+    layerID: 11
     mosaicPosition: {x: 0, y: 0}
-  - name: Camada 1 copiar 3
-    spriteName: Camada 1 copiar 3
+  - name: 4
+    spriteName: 4
     isGroup: 0
     parentIndex: 0
-    spriteID: b544eab5824e1814098b05de4be54cc8
-    layerID: 6
+    spriteID: 0316ec5a83f593d46b8b61abe0257b81
+    layerID: 10
     mosaicPosition: {x: 4, y: 4}
-  - name: Camada 1 copiar 2
-    spriteName: Camada 1 copiar 2
+  - name: 3
+    spriteName: 3
     isGroup: 0
     parentIndex: 0
-    spriteID: e12c7e75aca486c43bcca225b7f4a237
-    layerID: 5
-    mosaicPosition: {x: 4, y: 29}
-  - name: Camada 1 copiar
-    spriteName: Camada 1 copiar
+    spriteID: 77d6d5f9c3a93984ebc27cd99a4251ab
+    layerID: 8
+    mosaicPosition: {x: 4, y: 30}
+  - name: 2
+    spriteName: 2
     isGroup: 0
     parentIndex: 0
-    spriteID: 7055d8d27987bc44db5d991e55277f00
+    spriteID: 74e05931aada9de4fa3ede3a8d7d7cfd
+    layerID: 6
+    mosaicPosition: {x: 4, y: 56}
+  - name: 1
+    spriteName: 1
+    isGroup: 0
+    parentIndex: 0
+    spriteID: c6b308ca35bb52c45bfdf599fc17be9c
     layerID: 4
-    mosaicPosition: {x: 27, y: 28}
-  - name: Camada 1
-    spriteName: Camada 1
+    mosaicPosition: {x: 4, y: 82}
+  - name: Plano de Fundo
+    spriteName: Plano de Fundo
     isGroup: 0
-    parentIndex: 0
-    spriteID: 43d29631a3de0d946baee5481f2739f4
-    layerID: 3
-    mosaicPosition: {x: 27, y: 4}
+    parentIndex: -1
+    spriteID: 376ec7ba813fab5449091c69968d6b83
+    layerID: 1
+    mosaicPosition: {x: 31, y: 4}
   sharedRigPSDLayers: []
   generateGOHierarchy: 0
   textureAssetName: Parado Texture

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 526329fc72b9bb047913a82bfa690ec6
+guid: 6f68e3ab3e1e7f8458390d8818395e46
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -91,72 +91,6 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: 7
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 27
-      y: 28
-      width: 15
-      height: 14
-    spriteID: f0269028199486c459f9bf79c620444d
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 1, y: 22}
-  - name: 6
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 15
-      height: 18
-    spriteID: 803675ba84b67c54f9b3eaf0ff12b4d4
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -22, y: -2}
-  - name: 5
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 56
-      width: 15
-      height: 16
-    spriteID: 5aebfd424683c1f41af92199c2f73de8
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -22, y: 49}
   - name: 4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -165,10 +99,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 80
-      width: 15
-      height: 16
-    spriteID: 2cbb94dc77515394e978faa5c686d918
+      y: 4
+      width: 19
+      height: 18
+    spriteID: 8b69ac6fe84ca7b4ebc28d9cf88e013b
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -178,7 +112,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -22, y: 74}
+    uvTransform: {x: 4, y: 4}
   - name: 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -188,9 +122,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 30
-      width: 15
+      width: 19
       height: 18
-    spriteID: 636b761b31af3d84cb3ff758a09ed913
+    spriteID: fe7b1af59477efb46ac9df421f032248
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -200,7 +134,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -22, y: 24}
+    uvTransform: {x: 4, y: 30}
   - name: 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -209,10 +143,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 104
-      width: 15
-      height: 16
-    spriteID: ebfb3b9f0013d0f4694543068dbe9923
+      y: 56
+      width: 19
+      height: 18
+    spriteID: 1e9de618f17ecfc45926258ad0a3af0c
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -222,7 +156,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -22, y: 97}
+    uvTransform: {x: 4, y: 56}
   - name: 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -230,11 +164,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 27
-      y: 4
-      width: 15
-      height: 16
-    spriteID: 03e4cd4a7db9b9e4eace5bbbda0be349
+      x: 4
+      y: 82
+      width: 19
+      height: 18
+    spriteID: c29c909bfc95ada4887b6c3ceb2f99db
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -244,7 +178,29 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1, y: -2}
+    uvTransform: {x: 4, y: 82}
+  - name: Plano de Fundo
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 4
+      width: 19
+      height: 18
+    spriteID: 890ef8745b3528941be49cbc31ca7409
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 31, y: 4}
   characterData:
     bones: []
     parts: []
@@ -288,7 +244,7 @@ ScriptedImporter:
   importHiddenLayers: 0
   importedTextureWidth: 64
   importedTextureHeight: 128
-  documentSize: {x: 66, y: 27}
+  documentSize: {x: 19, y: 18}
   paperDollMode: 0
   keepDupilcateSpriteName: 1
   skeletonAssetReferenceID: 
@@ -305,57 +261,43 @@ ScriptedImporter:
     isGroup: 1
     parentIndex: -1
     spriteID: 00000000000000000000000000000000
-    layerID: 19
+    layerID: 29
     mosaicPosition: {x: 0, y: 0}
-  - name: 7
-    spriteName: 7
-    isGroup: 0
-    parentIndex: 0
-    spriteID: f0269028199486c459f9bf79c620444d
-    layerID: 18
-    mosaicPosition: {x: 27, y: 28}
-  - name: 6
-    spriteName: 6
-    isGroup: 0
-    parentIndex: 0
-    spriteID: 803675ba84b67c54f9b3eaf0ff12b4d4
-    layerID: 17
-    mosaicPosition: {x: 4, y: 4}
-  - name: 5
-    spriteName: 5
-    isGroup: 0
-    parentIndex: 0
-    spriteID: 5aebfd424683c1f41af92199c2f73de8
-    layerID: 16
-    mosaicPosition: {x: 4, y: 56}
   - name: 4
     spriteName: 4
     isGroup: 0
     parentIndex: 0
-    spriteID: 2cbb94dc77515394e978faa5c686d918
-    layerID: 15
-    mosaicPosition: {x: 4, y: 80}
+    spriteID: 8b69ac6fe84ca7b4ebc28d9cf88e013b
+    layerID: 19
+    mosaicPosition: {x: 4, y: 4}
   - name: 3
     spriteName: 3
     isGroup: 0
     parentIndex: 0
-    spriteID: 636b761b31af3d84cb3ff758a09ed913
-    layerID: 11
+    spriteID: fe7b1af59477efb46ac9df421f032248
+    layerID: 17
     mosaicPosition: {x: 4, y: 30}
   - name: 2
     spriteName: 2
     isGroup: 0
     parentIndex: 0
-    spriteID: ebfb3b9f0013d0f4694543068dbe9923
-    layerID: 10
-    mosaicPosition: {x: 4, y: 104}
+    spriteID: 1e9de618f17ecfc45926258ad0a3af0c
+    layerID: 15
+    mosaicPosition: {x: 4, y: 56}
   - name: 1
     spriteName: 1
     isGroup: 0
     parentIndex: 0
-    spriteID: 03e4cd4a7db9b9e4eace5bbbda0be349
-    layerID: 9
-    mosaicPosition: {x: 27, y: 4}
+    spriteID: c29c909bfc95ada4887b6c3ceb2f99db
+    layerID: 13
+    mosaicPosition: {x: 4, y: 82}
+  - name: Plano de Fundo
+    spriteName: Plano de Fundo
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 890ef8745b3528941be49cbc31ca7409
+    layerID: 1
+    mosaicPosition: {x: 31, y: 4}
   sharedRigPSDLayers: []
   generateGOHierarchy: 0
   textureAssetName: Andando Texture

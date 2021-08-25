@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rigidbody2d;
     Transform transform;
     [SerializeField] float moveSpeed;
+    Animator animator;
+    int walkingSide = 0;
 
     int health = 5;
     
@@ -14,11 +16,31 @@ public class PlayerController : MonoBehaviour
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         transform = GetComponent<Transform>();
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
+
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            walkingSide = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            walkingSide = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+        {
+            walkingSide = 1;
+        }
+
         rigidbody2d.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed);
+        animator.SetFloat( "Velocity", Mathf.Abs(rigidbody2d.velocity.x + rigidbody2d.velocity.y) );
+        animator.SetInteger( "WalkingSide", walkingSide);
+
+        
     }
 
     public void Hit(int amount)

@@ -77,11 +77,11 @@ public class Guard_PistolControll : MonoBehaviour
         switch (persuitType)
         {
             case "Focused":
-                Collider2D focusZone = Physics2D.OverlapCircle(transform.position, 10, 1 << LayerMask.NameToLayer("Player"));
+                Collider2D playerFound = Physics2D.OverlapCircle(transform.position, 10, 1 << LayerMask.NameToLayer("Player"));
 
-                if (focusZone)
+                if (playerFound)
                 {
-
+                    
                 }
 
             break;
