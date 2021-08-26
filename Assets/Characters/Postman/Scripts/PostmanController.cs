@@ -69,28 +69,7 @@ public class PostmanController : MonoBehaviour
 
     void PickPackage()
     {
-        if (path == null)
-            return;
-        
-        if (currentWayPoint >= path.vectorPath.Count)
-        {
-            reachedEndOfPath = true;
-            return;
-        }
-        else
-        {
-            reachedEndOfPath = false;
-        }
-
-        Vector2 direction = ( (Vector2)path.vectorPath[currentWayPoint] - rigidbody2d.position ).normalized;
-        Vector2 force = direction * (moveSpeed * 20) * Time.deltaTime;
-
-        rigidbody2d.AddForce(force);
-
-        float distance = Vector2.Distance(rigidbody2d.position, path.vectorPath[currentWayPoint]);
-
-        if (distance <= nextWayPoinDistance)
-            currentWayPoint++;
+        GoAfterTarget();
 
         // // Get the angle that the postman is pointing to by moving, using it, adds 2 check angles, one 45° upper and other 45° lower. These are used to check for walls and evade them
         // Vector3 movement =  new Vector3(rigidbody2d.velocity.x, rigidbody2d.velocity.y, 0);
@@ -105,15 +84,7 @@ public class PostmanController : MonoBehaviour
     {
         target = objective.gameObject.GetComponent<Transform>();
 
-        Vector2 direction = ( (Vector2)path.vectorPath[currentWayPoint] - rigidbody2d.position ).normalized;
-        Vector2 force = direction * (moveSpeed * 20) * Time.deltaTime;
-
-        rigidbody2d.AddForce(force);
-
-        float distance = Vector2.Distance(rigidbody2d.position, path.vectorPath[currentWayPoint]);
-
-        if (distance <= nextWayPoinDistance)
-            currentWayPoint++;
+        GoAfterTarget();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -123,11 +94,14 @@ public class PostmanController : MonoBehaviour
         {
             Transform boxTransform = box.gameObject.GetComponent<Transform>();
             Collider2D boxCollider = box.gameObject.GetComponent<Collider2D>();
+            Rigidbody2D boxRb = box.gameObject.GetComponent<Rigidbody2D>();
 
             boxTransform.SetParent(this.transform);
-
             boxTransform.localPosition = new Vector3(.04f, 0, 0);
+            boxCollider.isTrigger = true;
+            boxRb.isKinematic = true;
             objective = GameObject.Find("Objective");
+
             state = "DeliveryPackage";
         }
     }
@@ -157,5 +131,31 @@ public class PostmanController : MonoBehaviour
         if (!p.error)
             path = p;
             currentWayPoint = 0;
-    } 
+    }
+
+    void GoAfterTarget()
+    {
+        if (path == null)
+            return;
+        
+        if (currentWayPoint >= path.vectorPath.Count)
+        {
+            reachedEndOfPath = true;
+            return;
+        }
+        else
+        {
+            reachedEndOfPath = false;
+        }
+
+        Vector2 direction = ( (Vector2)path.vectorPath[currentWayPoint] - rigidbody2d.position ).normalized;
+        Vector2 force = direction * (moveSpeed * 10) * Time.deltaTime;
+
+        rigidbody2d.AddForce(force);
+
+        float distance = Vector2.Distance(rigidbody2d.position, path.vectorPath[currentWayPoint]);
+
+        if (distance <= nextWayPoinDistance)
+            currentWayPoint++;
+    }
 }

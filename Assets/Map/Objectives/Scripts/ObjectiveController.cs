@@ -16,15 +16,10 @@ public class ObjectiveController : MonoBehaviour
             otherCollider.enabled = false;
 
 
-            float objectiveSizeX = this.GetComponent<Transform>().localScale.x;
-            float objectiveSizeY = this.GetComponent<Transform>().localScale.y;
-            Vector3 randomPosition = new Vector3(Random.Range( -.8f, .8f / 2), Random.Range(- .8f, .8f / 2), 0 );
+            Vector2 objectiveSize = this.GetComponent<BoxCollider2D>().size;
+            Vector3 randomPosition = new Vector3(Random.Range( -objectiveSize.x, objectiveSize.x / 2), Random.Range(- objectiveSize.y, objectiveSize.y / 2), 0 );
             
             boxPos.localPosition = randomPosition;
-            As caixas estão indo longe
-
-
-
         }
     }
 }

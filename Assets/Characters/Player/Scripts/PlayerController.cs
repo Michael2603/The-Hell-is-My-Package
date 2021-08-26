@@ -21,8 +21,6 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-
-
         if (Input.GetKeyDown(KeyCode.W))
         {
             walkingSide = 1;
@@ -37,10 +35,18 @@ public class PlayerController : MonoBehaviour
         }
 
         rigidbody2d.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed);
-        animator.SetFloat( "Velocity", Mathf.Abs(rigidbody2d.velocity.x + rigidbody2d.velocity.y) );
-        animator.SetInteger( "WalkingSide", walkingSide);
 
-        
+        if (rigidbody2d.velocity.x < 0)
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, 0);
+        }
+        else if (rigidbody2d.velocity.x > 0)
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, 0);
+        }
+
+        animator.SetFloat("Move X", Input.GetAxis("Horizontal"));
+        animator.SetFloat("Move Y", Input.GetAxis("Vertical"));
     }
 
     public void Hit(int amount)

@@ -96,7 +96,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3290981102978424572}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9f13a8fec0956ce499404b05bd202f18, type: 2}
   m_CullingMode: 0
@@ -120,8 +120,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1.5
-  m_AngularDrag: 0
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -157,10 +157,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2d: {fileID: 0}
-  moveSpeed: 30
+  moveSpeed: 10
   state: TrackPackage
   target: {fileID: 0}
-  nextWayPoinDistance: 0
+  nextWayPoinDistance: 3
 --- !u!114 &716613695
 MonoBehaviour:
   m_ObjectHideFlags: 0

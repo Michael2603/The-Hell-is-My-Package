@@ -16,6 +16,10 @@ public class Guard_PistolControll : MonoBehaviour
     [SerializeField] Gradient gradient;
     [SerializeField] Image fill;
 
+    [SerializeField] GameObject bullet;
+    [SerializeField] float bulletSpeed;
+    [SerializeField] Transform bulletEmitter;
+
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -81,7 +85,8 @@ public class Guard_PistolControll : MonoBehaviour
 
                 if (playerFound)
                 {
-                    
+                    Shoot(playerFound.GetComponent<Transform>());
+                    Debug.Log("Piu piu");
                 }
 
             break;
@@ -89,6 +94,20 @@ public class Guard_PistolControll : MonoBehaviour
 
             break;
         }
+    }
+
+    void Shoot(Transform player)
+    {
+        // Retorna o plauer em angulo
+        float Angle = Mathf.Atan2(player.position.y, player.position.x) * Mathf.Rad2Deg ;
+
+        GameObject tempBullet = Instantiate(this.bullet, bulletEmitter.position, bullet.GetComponent<Transform>().rotation);
+        Transform tempBulletTransform = tempBullet.GetComponent<Transform>();
+
+        //Adiciona uma rotação ao objeto dependendo da posição do player
+        tempBulletTransform.Rotate(0,0, Angle, Space.Self);
+
+        tempBullet.GetComponent<Rigidbody2D>().AddForce(tempBulletTransform.right * bulletSpeed, ForceMode2D.Impulse);
     }
 
     void OnDrawGizmosSelected()
