@@ -123,36 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &82343148
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 82343149}
-  m_Layer: 8
-  m_Name: BulletEmitter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &82343149
+--- !u!4 &216682176 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 216682176, guid: 630146cf2d1666e46b47c94feb602dc8, type: 3}
+  m_PrefabInstance: {fileID: 8167135591891044771}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 82343148}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.018, y: -0.148, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2040971685}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &332550127
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3290981102978424569, guid: 4ebf6d482e5aeaf4689baafdf1473085, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.7791557
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3290981102978424569, guid: 4ebf6d482e5aeaf4689baafdf1473085, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1452,41 +1427,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &2028020150
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2028020151}
-  m_Layer: 0
-  m_Name: MAPA
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2028020151
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028020150}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.81946516, y: -4.536842, z: -12.715376}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2040971685 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8479201612236861538, guid: 630146cf2d1666e46b47c94feb602dc8, type: 3}
-  m_PrefabInstance: {fileID: 8167135591891044771}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2049793647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,11 +1549,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 453512708442195353, guid: 02245a2789bfbfe4ab5b75e541856656, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.6385
+      value: -7.07
       objectReference: {fileID: 0}
     - target: {fileID: 453512708442195353, guid: 02245a2789bfbfe4ab5b75e541856656, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.0373
+      value: 6.83
       objectReference: {fileID: 0}
     - target: {fileID: 453512708442195353, guid: 02245a2789bfbfe4ab5b75e541856656, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1884,25 +1824,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4245601531668545786, guid: 630146cf2d1666e46b47c94feb602dc8, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 453512708442195355, guid: 02245a2789bfbfe4ab5b75e541856656, type: 3}
-    - target: {fileID: 4245601531668545786, guid: 630146cf2d1666e46b47c94feb602dc8, type: 3}
-      propertyPath: bulletSpeed
-      value: 10
+      propertyPath: shootTimer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4245601531668545786, guid: 630146cf2d1666e46b47c94feb602dc8, type: 3}
       propertyPath: bulletEmitter
       value: 
-      objectReference: {fileID: 82343149}
-    - target: {fileID: 4245601531668545786, guid: 630146cf2d1666e46b47c94feb602dc8, type: 3}
-      propertyPath: shootingDirection.x
-      value: 0.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 4245601531668545786, guid: 630146cf2d1666e46b47c94feb602dc8, type: 3}
-      propertyPath: shootingDirection.y
-      value: 1.29
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 216682176}
     - target: {fileID: 6652358751448916191, guid: 630146cf2d1666e46b47c94feb602dc8, type: 3}
       propertyPath: m_Name
       value: Guard - Pistol
