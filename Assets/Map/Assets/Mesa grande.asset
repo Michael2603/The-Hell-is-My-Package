@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Mesa grande
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -3015164797628252987, guid: 6c4275cc04008914d97bae28749378a5, type: 3}
+  m_Sprite: {fileID: 3255871243752168736, guid: 2ff3276f76be6ee4da85ce88e5fa6925, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Pathfinding;
 
 public class Guard_PistolControll : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Guard_PistolControll : MonoBehaviour
     float detectionRate = 0;
     string patrolType = "Idle";
     string persuitType = "Focused";
+    public float moveSpeed;
 
     [SerializeField] Slider slider;
     [SerializeField] Gradient gradient;
@@ -37,8 +39,7 @@ public class Guard_PistolControll : MonoBehaviour
         collider2d = GetComponent<Collider2D>();
         transform = GetComponent<Transform>();
         Timer = shootTimer;
-    
-        coll = GetComponent<Collider2D>();
+
         seeker = GetComponent<Seeker>();
         InvokeRepeating("UpdatePath", 0, .5f);
     }
@@ -105,24 +106,22 @@ public class Guard_PistolControll : MonoBehaviour
     // Controls the 2 states of persuit (when he focus and attack the player and when the player leaves his sight and he starts to search for the player)
     void PlayerFocused()
     {
+        Collider2D playerFound = Physics2D.OverlapCircle(transform.position, 10, 1 << LayerMask.NameToLayer("Player"));
+        Transform playerTransform = playerFound.gameObject.GetComponent<Transform>();
         switch (persuitType)
         {
-            Collider2D playerFound = Physics2D.OverlapCircle(transform.position, 10, 1 << LayerMask.NameToLayer("Player"));
-            
             case "Focused":
+
                 if (playerFound)
                 {
                     if (canShoot)
-                    {
                         Shoot(playerFound.GetComponent<Transform>());
-                    }
                 }
                 else
                 {
                     persuitType = "Searching";
-                    target = playerFound;
+                    target = playerTransform;
                 }
-
             break;
             case "Searching":
                 Collider2D playerSearch = Physics2D.OverlapCircle(transform.position, 15, 1 << LayerMask.NameToLayer("Player"));
@@ -132,7 +131,7 @@ public class Guard_PistolControll : MonoBehaviour
                 {
                     GoAfterTarget();
                     detectionRate -= Time.deltaTime * .4f;
-                    Collider2D playerFound = Physics2D.OverlapCircle(transform.position, 10, 1 << LayerMask.NameToLayer("Player"));
+                    // Collider2D playerFound = Physics2D.OverlapCircle(transform.position, 10, 1 << LayerMask.NameToLayer("Player"));
                     if (playerFound)
                         persuitType = "Focused";
                 }
@@ -140,7 +139,6 @@ public class Guard_PistolControll : MonoBehaviour
                 {
                     detectionRate -= Time.deltaTime * .1f;
                 }
-
             break;
         }
     }
@@ -148,7 +146,7 @@ public class Guard_PistolControll : MonoBehaviour
     void Shoot(Transform player)
     {
         // Returns player's angle relative to guard's position
-         Vector3 relative = transform.InverseTransformPoint(player.position);
+        Vector3 relative = transform.InverseTransformPoint(player.position);
         float Angle = Mathf.Atan2(relative.y, relative.x) * Mathf.Rad2Deg;
         rotationTransform.rotation = Quaternion.Euler(Vector3.forward * Angle);
 
@@ -162,6 +160,12 @@ public class Guard_PistolControll : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(GetComponent<Transform>().position, 10);
+    }
+
+    void UpdatePath()
+    {
+        if (seeker.IsDone() && target != null)
+            seeker.StartPath(rigidbody2d.position, target.position, OnPathComplete);
     }
 
     void OnPathComplete(Path p)
