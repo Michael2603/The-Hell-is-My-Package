@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Idle_B : StateMachineBehaviour
 {
-   [SerializeField] GameObject atkObj;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+       //Disable every collider that deals damage to enemys
+       PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(0).gameObject.SetActive(false);
+       PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(1).gameObject.SetActive(false);
+       PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(2).gameObject.SetActive(false);
+       
        PlayerController.instance.canReceiveInput = true;
     }
 
@@ -20,6 +24,8 @@ public class Idle_B : StateMachineBehaviour
             PlayerController.instance.InputManager();
             PlayerController.instance.inputReceived = false;
             PlayerController.instance.canReceiveInput = false;
+
+            PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(0).gameObject.SetActive(true);
        }
     }
 

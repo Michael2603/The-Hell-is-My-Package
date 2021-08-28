@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 5451338116005733069}
   - component: {fileID: 5451338116005733070}
   - component: {fileID: 5451338116005733071}
+  - component: {fileID: 6215308790073436579}
   - component: {fileID: 1968573740}
   - component: {fileID: 1968573742}
   m_Layer: 6
@@ -239,7 +240,7 @@ Transform:
   m_GameObject: {fileID: 5451338116005733066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.3863, y: -9.9825, z: 0}
-  m_LocalScale: {x: 11, y: 11, z: 0}
+  m_LocalScale: {x: 15, y: 15, z: 0}
   m_Children:
   - {fileID: 511233551}
   - {fileID: 1183978776}
@@ -338,6 +339,20 @@ MonoBehaviour:
   atk1: {fileID: 511233552}
   atk2: {fileID: 1183978777}
   atk3: {fileID: 1469344665}
+  checkBoxTimer: 5
+--- !u!114 &6215308790073436579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5451338116005733066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83d39ab79a3becc4bb8341e2138d8238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsList: []
 --- !u!61 &1968573740
 BoxCollider2D:
   m_ObjectHideFlags: 0

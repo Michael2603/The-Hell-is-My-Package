@@ -6,6 +6,11 @@ public class Transition01_B : StateMachineBehaviour
 {
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+       //Disable every collider that deals damage to enemys
+       PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(0).gameObject.SetActive(false);
+       PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(1).gameObject.SetActive(false);
+       PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(2).gameObject.SetActive(false);
+       
        PlayerController.instance.canReceiveInput = true;
     }
 
@@ -18,6 +23,8 @@ public class Transition01_B : StateMachineBehaviour
             PlayerController.instance.InputManager();
             PlayerController.instance.inputReceived = false;
             PlayerController.instance.canReceiveInput = false;
+
+            PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(1).gameObject.SetActive(true);
        }
     }
 

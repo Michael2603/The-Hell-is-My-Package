@@ -100,7 +100,7 @@ ScriptedImporter:
       x: 88
       y: 30
       width: 34
-      height: 17
+      height: 18
     spriteID: 6856b93870638ca4bba2d8f1ab1434b0
     internalID: 0
     spriteBone: []
@@ -144,7 +144,7 @@ ScriptedImporter:
       x: 4
       y: 56
       width: 34
-      height: 17
+      height: 18
     spriteID: 58f53c6f56532be4591ca522b2fbae86
     internalID: 0
     spriteBone: []
@@ -232,7 +232,7 @@ ScriptedImporter:
       x: 46
       y: 56
       width: 34
-      height: 16
+      height: 18
     spriteID: fe6eae2cea070504f9d5f0afaaa0b9de
     internalID: 0
     spriteBone: []
@@ -501,7 +501,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 388
     mosaicPosition: {x: 0, y: 0}
   - name: 8

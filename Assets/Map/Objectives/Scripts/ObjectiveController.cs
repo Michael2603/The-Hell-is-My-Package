@@ -6,7 +6,7 @@ public class ObjectiveController : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D otherCollider)
     {
-        if ( otherCollider.gameObject.layer == LayerMask.NameToLayer("Box") )
+        if ( otherCollider.gameObject.layer == LayerMask.NameToLayer("Box"))
         {
             Transform boxPos = otherCollider.GetComponent<Transform>();
 
