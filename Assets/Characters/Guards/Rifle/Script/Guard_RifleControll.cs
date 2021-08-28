@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Pathfinding;
 
-public class Guard_PistolControll : MonoBehaviour
+public class Guard_RifleControll : MonoBehaviour
 {
     Rigidbody2D rigidbody2d;
     Collider2D collider2d;
@@ -15,6 +15,7 @@ public class Guard_PistolControll : MonoBehaviour
     public float moveSpeed;
     bool lostContact = true;
     Transform playerTransform;
+
     int health = 3;
 
     GameObject patrolPost1;
