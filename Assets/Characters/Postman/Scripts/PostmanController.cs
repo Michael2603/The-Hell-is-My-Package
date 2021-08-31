@@ -14,6 +14,9 @@ public class PostmanController : MonoBehaviour
     Transform box;
     GameObject objective;
 
+    GameObject[] deliveryPoints;
+    GameObject[] waitingPoints;
+
     public Transform target;
     public float nextWayPoinDistance = 3f;
     Path path;
@@ -28,6 +31,10 @@ public class PostmanController : MonoBehaviour
         animator = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
         seeker = GetComponent<Seeker>();
+
+        waitingPoints = GameObject.FindGameObjectsWithTag("WaitingPoint");
+        deliveryPoints = GameObject.FindGameObjectsWithTag("DeliveryPoint");
+        target = waitingPoints[Random.Range(0, waitingPoints.Length)].gameObject.GetComponent<Transform>();
 
        InvokeRepeating("UpdatePath", 0, .5f);
         
@@ -57,19 +64,25 @@ public class PostmanController : MonoBehaviour
         Collider2D checkZone = Physics2D.OverlapCircle(rigidbody2d.position, 10, 1 << LayerMask.NameToLayer("Box"));
         if (checkZone != null)
         {
-            state = "PickPackage";
             box = checkZone.gameObject.GetComponent<Transform>();
-            
+                    
             target = box;
-        }else
-        {
-            box = null;
         }
+        else
+            box = null;
+
+        GoAfterTarget();
     } 
 
     void PickPackage()
     {
         GoAfterTarget();
+
+        // if (reachedEndOfPath)
+        // {
+        //     target = deliveryPoints[Random.Range(0, deliveryPoints.Length)].GetComponent<Transform>();
+        //     state = "DeliveryPackage";
+        // }
 
         // // Get the angle that the postman is pointing to by moving, using it, adds 2 check angles, one 45° upper and other 45° lower. These are used to check for walls and evade them
         // Vector3 movement =  new Vector3(rigidbody2d.velocity.x, rigidbody2d.velocity.y, 0);
@@ -82,15 +95,16 @@ public class PostmanController : MonoBehaviour
 
     void DeliveryPackage()
     {
-        target = objective.gameObject.GetComponent<Transform>();
-
         GoAfterTarget();
+
+        if (reachedEndOfPath)
+            state = "TrackPackage";
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         // Check if is looking for a box and if has collided to a box, if so, grab it
-        if (state == "PickPackage" && (other.gameObject.layer == LayerMask.NameToLayer("Box") ))
+        if ( state == "TrackPackage" && (other.gameObject.layer == LayerMask.NameToLayer("Box")) )
         {
             Transform boxTransform = box.gameObject.GetComponent<Transform>();
             Collider2D boxCollider = box.gameObject.GetComponent<Collider2D>();
@@ -100,9 +114,11 @@ public class PostmanController : MonoBehaviour
             boxTransform.localPosition = new Vector3(.04f, 0, 0);
             boxCollider.isTrigger = true;
             boxRb.isKinematic = true;
-            objective = GameObject.Find("Objective");
 
+            N ta indo entregar a caixa
+            
             state = "DeliveryPackage";
+            target = deliveryPoints[Random.Range(0, deliveryPoints.Length)].GetComponent<Transform>();
         }
     }
 

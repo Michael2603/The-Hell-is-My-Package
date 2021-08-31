@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8586336783608873729}
   - component: {fileID: 8586336783608873730}
   - component: {fileID: 5761342450696023977}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Box_Mediun
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

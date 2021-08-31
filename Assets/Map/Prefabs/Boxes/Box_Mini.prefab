@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6567965607357501375}
   - component: {fileID: 6567965607357501372}
   - component: {fileID: 1251729530790663951}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Box_Mini
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
