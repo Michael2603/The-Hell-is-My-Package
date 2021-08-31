@@ -6,6 +6,8 @@ public class ItemsManager : MonoBehaviour
 {
     public List<GameObject> itemsList = new List<GameObject>();
 
+    public GameObject specialDeliverySpace;
+
     public void PickPackage(GameObject item)
     {
         if (item.layer != 1 << LayerMask.NameToLayer("Box"))
