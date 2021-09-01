@@ -17,7 +17,7 @@ public class AttackArea : MonoBehaviour
                 bltRigidbody2d.velocity = new Vector3(bltRigidbody2d.velocity.x, - bltRigidbody2d.velocity.y, 0);
         }
 
-        if ( collider.gameObject.layer == 1 << LayerMask.NameToLayer("Guard") || collider.gameObject.layer == 1 << LayerMask.NameToLayer("Postman") )
+        if ( collider.gameObject.layer == 1 << LayerMask.NameToLayer("Guard") )
         {
             if (name.Contains("Pistol"))
                 collider.gameObject.GetComponent<Guard_PistolControll>().Hit();
@@ -25,6 +25,11 @@ public class AttackArea : MonoBehaviour
                 collider.gameObject.GetComponent<Guard_RifleControll>().Hit();
             else if (name.Contains("Shotgun"))
                 collider.gameObject.GetComponent<Guard_ShotgunControll>().Hit();
+        }
+
+        if ( collider.gameObject.layer == 1 << LayerMask.NameToLayer("Postman") )
+        {
+            collider.gameObject.GetComponent<PostmanController>().Hit();
         }
     }
 }

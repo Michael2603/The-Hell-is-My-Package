@@ -16,14 +16,24 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool canReceiveInput;
     [HideInInspector] public bool inputReceived;
 
-    [SerializeField] Collider2D atk1;
-    [SerializeField] Collider2D atk2;
-    [SerializeField] Collider2D atk3;
+    public AudioSource audio;
+    public AudioSource audio2;
 
     public float checkBoxTimer;
     GameObject boxCheckLocked;
 
+    [Header ("Attack Colliders")]
+    [SerializeField] Collider2D SideAtk1;
+    [SerializeField] Collider2D SideAtk2;
+    [SerializeField] Collider2D SideAtk3;
+    [SerializeField] Collider2D FrontAtk1;
+    [SerializeField] Collider2D FrontAtk2;
+    [SerializeField] Collider2D FrontAtk3;
+    [SerializeField] Collider2D BackAtk;
+
+
     int health = 5;
+    bool dead = false;
     [SerializeField] Slider slider;
 
 
@@ -41,6 +51,12 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (dead)
+        {
+            rigidbody2d.velocity = new Vector3(0,0,0);
+            GetComponent<Collider2D>().enabled = false;
+            return;
+        }
  
         if (rigidbody2d.velocity.x < 0)
         {
@@ -56,6 +72,7 @@ public class PlayerController : MonoBehaviour
 
         MovementSystem();
         HealthManager();
+        AudioManager();
     }
 
     void MovementSystem()
@@ -95,7 +112,11 @@ public class PlayerController : MonoBehaviour
 
             RaycastHit2D ray = Physics2D.BoxCast(transform.position + dir, new Vector2(2,2), 0f, dir, .1f, 1 << LayerMask.NameToLayer("Box"));
             if ( ray )
+            {
                 boxCheckLocked = ray.transform.gameObject;
+                if (!audio2.isPlaying)
+                    audio2.Play();
+            }
 
             if (boxCheckLocked != null)
             {
@@ -107,6 +128,8 @@ public class PlayerController : MonoBehaviour
         {
             checkBoxTimer = 5;
             boxCheckLocked = null;
+            if (audio2.isPlaying)
+                audio2.Stop();
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -151,9 +174,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void AudioManager()
+    {
+        if (rigidbody2d.velocity.x != 0 || rigidbody2d.velocity.y != 0)
+        {
+            if (!audio.isPlaying)
+                audio.Play();
+        }
+    }
+
     public void Hit(int amount)
     {
         this.health -= amount;
+        animator.SetTrigger("Hit");
+
+        if (this.health <= 2)
+        {
+            animator.SetTrigger("Dead");
+            this.dead = true;
+        }
     }
 
     public void InputManager()

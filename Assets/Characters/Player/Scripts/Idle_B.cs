@@ -8,9 +8,13 @@ public class Idle_B : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
        //Disable every collider that deals damage to enemys
-       PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(0).gameObject.SetActive(false);
-       PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(1).gameObject.SetActive(false);
-       PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(2).gameObject.SetActive(false);
+       PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(0).GetChild(0).gameObject.SetActive(false);
+       PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(0).GetChild(1).gameObject.SetActive(false);
+       PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(0).GetChild(2).gameObject.SetActive(false);
+       PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(1).GetChild(0).gameObject.SetActive(false);
+       PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(1).GetChild(1).gameObject.SetActive(false);
+       PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(1).GetChild(2).gameObject.SetActive(false);
+       PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(2).GetChild(0).gameObject.SetActive(false);
        
        PlayerController.instance.canReceiveInput = true;
     }
@@ -25,7 +29,12 @@ public class Idle_B : StateMachineBehaviour
             PlayerController.instance.inputReceived = false;
             PlayerController.instance.canReceiveInput = false;
 
-            PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(0).gameObject.SetActive(true);
+            if (Input.GetAxis("Vertical") > 0)
+               PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(2).GetChild(0).gameObject.SetActive(true);
+            else if (Input.GetAxis("Vertical") < 0)
+               PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(1).GetChild(0).gameObject.SetActive(true);
+            else
+               PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(0).GetChild(0).gameObject.SetActive(true);
        }
     }
 

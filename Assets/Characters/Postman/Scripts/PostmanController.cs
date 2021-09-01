@@ -25,6 +25,8 @@ public class PostmanController : MonoBehaviour
     int currentWayPoint = 0;
     bool reachedEndOfPath = false;
     Seeker seeker;
+
+    int health = 3;
     
     void Awake()
     {
@@ -170,6 +172,19 @@ public class PostmanController : MonoBehaviour
         {
             currentWayPoint++;
             rigidbody2d.AddForce(-force);
+        }
+    }
+
+    public void Hit()
+    {
+        this.health--;
+    }
+
+    void HealthManager()
+    {
+        if (health <= 0)
+        {
+            animator.SetTrigger("Dead");
         }
     }
 }

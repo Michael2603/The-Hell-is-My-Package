@@ -256,6 +256,19 @@ public class Guard_RifleControll : MonoBehaviour
         this.target = player;
     }
 
+    void HealthManager()
+    {
+        if (this.health <= 0)
+        {
+            animator.SetTrigger("Dead");
+        }
+    }
+
+    public void Dead()
+    {
+        Destroy(this.gameObject);
+    }
+
     public void Hit()
     {
         this.health -= 1;
