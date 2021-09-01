@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 716613696}
   - component: {fileID: 431731559}
   - component: {fileID: 716613695}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Postman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3290981102978424572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.86, y: -7.27, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 0}
+  m_LocalScale: {x: 15, y: 15, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,9 +96,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3290981102978424572}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9f13a8fec0956ce499404b05bd202f18, type: 2}
+  m_Controller: {fileID: 9100000, guid: 02261059caefe2041958162eff83336e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -157,6 +157,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2d: {fileID: 0}
+  animationControllers:
+  - {fileID: 9100000, guid: ef0bbba9fc842f4449baabc6eb57529d, type: 2}
+  - {fileID: 9100000, guid: fda839a0074ae7b4da09240c218d6112, type: 2}
+  - {fileID: 9100000, guid: e47834eef0514944e99b12de0c620ea3, type: 2}
+  - {fileID: 9100000, guid: 02261059caefe2041958162eff83336e, type: 2}
   moveSpeed: 10
   state: TrackPackage
   target: {fileID: 0}

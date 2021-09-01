@@ -9,6 +9,8 @@ public class Guard_PistolControll : MonoBehaviour
     Rigidbody2D rigidbody2d;
     Collider2D collider2d;
     Transform transform;
+    Animator animator;
+    
     float detectionRate = 0;
     public string patrolType;
     string persuitType = "Focused";
@@ -48,6 +50,7 @@ public class Guard_PistolControll : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         collider2d = GetComponent<Collider2D>();
         transform = GetComponent<Transform>();
+        animator = GetComponent<Animator>();
         Timer = shootTimer;
 
         seeker = GetComponent<Seeker>();
@@ -59,7 +62,6 @@ public class Guard_PistolControll : MonoBehaviour
         patrolPost2 = Posts[Random.Range(0, Posts.Length)];
 
         currentPost = patrolPost1.GetComponent<Transform>();
-        Debug.Log("Post1 = " + patrolPost1 + "\nPost2 = " + patrolPost2);
     }
 
     void FixedUpdate()
@@ -84,6 +86,9 @@ public class Guard_PistolControll : MonoBehaviour
                 canShoot = true;
             }
         }
+
+        animator.SetFloat("MoveX", rigidbody2d.velocity.x);
+        animator.SetFloat("MoveY", rigidbody2d.velocity.y);
     }
 
     //Controls the detection mechanics
@@ -154,7 +159,6 @@ public class Guard_PistolControll : MonoBehaviour
 
                 if(reachedPost)
                 {
-                    Debug.Log("Reached");
                     if (currentPost == patrol1)
                         currentPost = patrol2;
                     else if (currentPost == patrol2)
@@ -193,6 +197,7 @@ public class Guard_PistolControll : MonoBehaviour
 
                 if (playerFound)
                 {
+                    animator.SetBool("Shooting", true);
                     detectionRate = 1;
                     if (canShoot)
                         Shoot(playerFound.GetComponent<Transform>());
@@ -200,6 +205,7 @@ public class Guard_PistolControll : MonoBehaviour
                 else
                 {
                     persuitType = "Searching";
+                    animator.SetBool("Shooting", false);
                     target = playerTransform;
                 }
             break;
@@ -217,6 +223,7 @@ public class Guard_PistolControll : MonoBehaviour
                 }
                 else
                 {
+                    
                     detectionRate -= Time.deltaTime * .2f;
                     rigidbody2d.velocity = new Vector3(0,0,0);
                 }
@@ -296,6 +303,9 @@ public class Guard_PistolControll : MonoBehaviour
         float distance = Vector2.Distance(rigidbody2d.position, path.vectorPath[currentWayPoint]);
 
         if (distance <= nextWayPoinDistance)
+        {
             currentWayPoint++;
+            rigidbody2d.AddForce(-force);
+        }
     }
 }

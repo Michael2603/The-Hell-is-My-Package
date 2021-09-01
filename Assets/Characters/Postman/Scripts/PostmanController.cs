@@ -9,6 +9,8 @@ public class PostmanController : MonoBehaviour
     Collider2D coll;
     Transform transform;
     Animator animator;
+    public RuntimeAnimatorController[] animationControllers;
+
     [SerializeField] float moveSpeed;
     [SerializeField] string state;
     Transform box;
@@ -24,6 +26,11 @@ public class PostmanController : MonoBehaviour
     bool reachedEndOfPath = false;
     Seeker seeker;
     
+    void Awake()
+    {
+       animator.runtimeAnimatorController = animationControllers[Random.Range(0, 4)];    
+    }
+
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -37,14 +44,10 @@ public class PostmanController : MonoBehaviour
         target = waitingPoints[Random.Range(0, waitingPoints.Length)].gameObject.GetComponent<Transform>();
 
        InvokeRepeating("UpdatePath", 0, .5f);
-        
     }
 
     void FixedUpdate()
-    {
-        if (Mathf.Abs(rigidbody2d.velocity.x) > 0 || Mathf.Abs(rigidbody2d.velocity.y) > 0)
-            animator.SetFloat("Velocity", 1);
-        
+    {        
         switch (state)
         {
             case "TrackPackage":
@@ -57,6 +60,9 @@ public class PostmanController : MonoBehaviour
                 DeliveryPackage();
             break;
         }
+
+        animator.SetFloat("MoveX", rigidbody2d.velocity.x);
+        animator.SetFloat("MoveY", rigidbody2d.velocity.y);
     }
 
     void TrackPackage()
@@ -114,8 +120,6 @@ public class PostmanController : MonoBehaviour
             boxTransform.localPosition = new Vector3(.04f, 0, 0);
             boxCollider.isTrigger = true;
             boxRb.isKinematic = true;
-
-            N ta indo entregar a caixa
             
             state = "DeliveryPackage";
             target = deliveryPoints[Random.Range(0, deliveryPoints.Length)].GetComponent<Transform>();
@@ -125,15 +129,6 @@ public class PostmanController : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(GetComponent<Transform>().position, 10);
-
-        Vector3 movement =  new Vector3(GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y, 0);
-        float pointingAngle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
-
-        Vector3 upperCast = Quaternion.AngleAxis(pointingAngle + 45 , Vector3.forward) * Vector3.right * 10;
-        Vector3 lowerCast = Quaternion.AngleAxis(pointingAngle - 45, Vector3.forward) * Vector3.right * 10; 
-
-        Gizmos.DrawRay(GetComponent<Transform>().position, upperCast);
-        Gizmos.DrawRay(GetComponent<Transform>().position, lowerCast);
     }      
 
     void UpdatePath()
@@ -172,6 +167,9 @@ public class PostmanController : MonoBehaviour
         float distance = Vector2.Distance(rigidbody2d.position, path.vectorPath[currentWayPoint]);
 
         if (distance <= nextWayPoinDistance)
+        {
             currentWayPoint++;
+            rigidbody2d.AddForce(-force);
+        }
     }
 }

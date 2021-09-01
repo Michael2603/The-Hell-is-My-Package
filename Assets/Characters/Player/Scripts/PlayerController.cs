@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class PlayerController : MonoBehaviour
     Transform transform;
     [SerializeField] float moveSpeed;
     Animator animator;
-    int health = 5;
 
     [HideInInspector] public bool canReceiveInput;
     [HideInInspector] public bool inputReceived;
@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
 
     public float checkBoxTimer;
     GameObject boxCheckLocked;
+
+    int health = 5;
+    [SerializeField] Slider slider;
 
 
     void Awake()
@@ -52,6 +55,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Move Y", Input.GetAxis("Vertical"));
 
         MovementSystem();
+        HealthManager();
     }
 
     void MovementSystem()
@@ -127,10 +131,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Hit(int amount)
+    void HealthManager()
     {
-        this.health -= amount;
-        // Debug.Log("Crap, I have only " + health + " left!");
+        slider.value = health;
     }
 
     void CheckPackage(GameObject box)
@@ -146,6 +149,11 @@ public class PlayerController : MonoBehaviour
         {
             box.GetComponent<BoxController>().Openned();
         }
+    }
+
+    public void Hit(int amount)
+    {
+        this.health -= amount;
     }
 
     public void InputManager()
