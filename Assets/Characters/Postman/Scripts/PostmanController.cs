@@ -5,7 +5,7 @@ using Pathfinding;
 
 public class PostmanController : MonoBehaviour
 {
-    [HideInInspector] public Rigidbody2D rigidbody2d;
+    public Rigidbody2D rigidbody2d;
     Collider2D coll;
     Transform transform;
     Animator animator;
@@ -27,14 +27,10 @@ public class PostmanController : MonoBehaviour
     Seeker seeker;
 
     int health = 3;
-    
-    void Awake()
-    {
-       animator.runtimeAnimatorController = animationControllers[Random.Range(0, 4)];    
-    }
 
     void Start()
     {
+        animator.runtimeAnimatorController = animationControllers[Random.Range(0, 4)];    
         rigidbody2d = GetComponent<Rigidbody2D>();
         transform = GetComponent<Transform>();
         animator = GetComponent<Animator>();
@@ -178,6 +174,8 @@ public class PostmanController : MonoBehaviour
     public void Hit()
     {
         this.health--;
+        animator.SetTrigger("Hit");
+        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     }
 
     void HealthManager()

@@ -29,7 +29,7 @@ public class Transition01_B : StateMachineBehaviour
             PlayerController.instance.canReceiveInput = false;
 
             if (Input.GetAxis("Vertical") > 0)
-               PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(2).GetChild(1).gameObject.SetActive(true);
+               PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(2).GetChild(0).gameObject.SetActive(true);
             else if (Input.GetAxis("Vertical") < 0)
                PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(1).GetChild(1).gameObject.SetActive(true);
             else

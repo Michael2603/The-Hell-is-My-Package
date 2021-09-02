@@ -89,6 +89,8 @@ public class Guard_PistolControll : MonoBehaviour
 
         animator.SetFloat("MoveX", rigidbody2d.velocity.x);
         animator.SetFloat("MoveY", rigidbody2d.velocity.y);
+
+        HealthManager();
     }
 
     //Controls the detection mechanics

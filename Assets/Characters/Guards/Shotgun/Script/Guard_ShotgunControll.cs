@@ -319,5 +319,7 @@ public class Guard_ShotgunControll : MonoBehaviour
             currentWayPoint++;
             rigidbody2d.AddForce(-force);
         }
+
+        HealthManager();
     }
 }

@@ -89,6 +89,7 @@ public class Guard_RifleControll : MonoBehaviour
                 animator.SetFloat("MoveY", rigidbody2d.velocity.y);
             }
         }
+        HealthManager();
     }
 
     //Controls the detection mechanics
