@@ -30,10 +30,10 @@ public class PostmanController : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         animator.runtimeAnimatorController = animationControllers[Random.Range(0, 4)];    
         rigidbody2d = GetComponent<Rigidbody2D>();
         transform = GetComponent<Transform>();
-        animator = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
         seeker = GetComponent<Seeker>();
 
@@ -65,12 +65,19 @@ public class PostmanController : MonoBehaviour
 
     void TrackPackage()
     {
+        if (transform.childCount > 0)
+        {
+            state = "DeliveryPackage";
+            target = deliveryPoints[Random.Range(0, deliveryPoints.Length)].GetComponent<Transform>();
+        }
+
         Collider2D checkZone = Physics2D.OverlapCircle(rigidbody2d.position, 10, 1 << LayerMask.NameToLayer("Box"));
         if (checkZone != null)
         {
             box = checkZone.gameObject.GetComponent<Transform>();
                     
-            target = box;
+            if ( box.GetComponent<BoxController>().Target(this.gameObject.GetInstanceID()) )
+                target = box;
         }
         else
             box = null;
@@ -145,7 +152,7 @@ public class PostmanController : MonoBehaviour
     void GoAfterTarget()
     {
         if (path == null)
-            return;
+            return; 
         
         if (currentWayPoint >= path.vectorPath.Count)
         {

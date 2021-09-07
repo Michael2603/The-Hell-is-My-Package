@@ -45,6 +45,11 @@ public class Guard_PistolControll : MonoBehaviour
     bool reachedEndOfPath = false;
     Seeker seeker;
 
+    public AudioSource audio1;
+    public AudioSource audio2;
+
+    public AudioClip shotSound;
+
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -89,6 +94,12 @@ public class Guard_PistolControll : MonoBehaviour
 
         animator.SetFloat("MoveX", rigidbody2d.velocity.x);
         animator.SetFloat("MoveY", rigidbody2d.velocity.y);
+
+        if (rigidbody2d.velocity.x != 0 || rigidbody2d.velocity.y != 0)
+        {
+            if (!audio1.isPlaying)
+            audio1.Play();
+        }
 
         HealthManager();
     }
@@ -243,6 +254,9 @@ public class Guard_PistolControll : MonoBehaviour
         GameObject tempBullet = Instantiate(this.bullet, bulletEmitter.position, rotationTransform.rotation);
         Transform tempBulletTransform = tempBullet.GetComponent<Transform>();
         tempBullet.GetComponent<Rigidbody2D>().AddForce(tempBulletTransform.right * bulletSpeed, ForceMode2D.Impulse);
+
+        audio2.clip = shotSound;
+        audio2.Play();
 
         canShoot = false;
     }

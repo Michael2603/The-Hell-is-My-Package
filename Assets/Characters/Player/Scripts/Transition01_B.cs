@@ -24,13 +24,15 @@ public class Transition01_B : StateMachineBehaviour
        if ( PlayerController.instance.inputReceived )
        {
             animator.SetTrigger("Attack02");
+            PlayerController.instance.PlaySound("Attack 2");
+
             PlayerController.instance.InputManager();
             PlayerController.instance.inputReceived = false;
             PlayerController.instance.canReceiveInput = false;
 
-            if (Input.GetAxis("Vertical") > 0)
+            if (PlayerController.instance.direction.y > 0)
                PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(2).GetChild(0).gameObject.SetActive(true);
-            else if (Input.GetAxis("Vertical") < 0)
+            else if (PlayerController.instance.direction.y < 0)
                PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(1).GetChild(1).gameObject.SetActive(true);
             else
                PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(0).GetChild(0).gameObject.SetActive(true);

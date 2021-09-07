@@ -11,10 +11,20 @@ public class AttackArea : MonoBehaviour
             Transform bltTransform = collider.gameObject.GetComponent<Transform>();
             Rigidbody2D bltRigidbody2d = collider.gameObject.GetComponent<Rigidbody2D>();
 
+            
+            // This means that the bullet is going mainly horizontal
             if (Mathf.Abs(bltRigidbody2d.velocity.x) > Mathf.Abs(bltRigidbody2d.velocity.y))
-                bltRigidbody2d.velocity = new Vector3(- bltRigidbody2d.velocity.x,bltRigidbody2d.velocity.y, 0);
+            {
+                bltRigidbody2d.velocity = new Vector3(- bltRigidbody2d.velocity.x, bltRigidbody2d.velocity.y, 0);
+                bltTransform.localScale = new Vector3(- bltTransform.localScale.x, bltTransform.localScale.y, 0);
+            }
+            // This means that the bullet is going mainly vertical
             if (Mathf.Abs(bltRigidbody2d.velocity.y) > Mathf.Abs(bltRigidbody2d.velocity.x))
+            {
                 bltRigidbody2d.velocity = new Vector3(bltRigidbody2d.velocity.x, - bltRigidbody2d.velocity.y, 0);
+                bltTransform.localScale = new Vector3(bltTransform.localScale.x, -bltTransform.localScale.y, 0);
+            }
+
         }
 
         if ( collider.gameObject.layer == 1 << LayerMask.NameToLayer("Guard") )
