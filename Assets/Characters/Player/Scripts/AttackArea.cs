@@ -27,19 +27,17 @@ public class AttackArea : MonoBehaviour
 
         }
 
-        if ( collider.gameObject.layer == 1 << LayerMask.NameToLayer("Guard") )
+        if ( collider.gameObject.layer == LayerMask.NameToLayer("Guard") )
         {
-            if (name.Contains("Pistol"))
+            if (collider.gameObject.tag == "Pistol")
                 collider.gameObject.GetComponent<Guard_PistolControll>().Hit();
-            else if (name.Contains("Rifle"))
+            else if (collider.gameObject.tag == "Rifle")
                 collider.gameObject.GetComponent<Guard_RifleControll>().Hit();
-            else if (name.Contains("Shotgun"))
+            else if (collider.gameObject.tag == "Rifle")
                 collider.gameObject.GetComponent<Guard_ShotgunControll>().Hit();
         }
 
         if ( collider.gameObject.layer == 1 << LayerMask.NameToLayer("Postman") )
-        {
             collider.gameObject.GetComponent<PostmanController>().Hit();
-        }
     }
 }

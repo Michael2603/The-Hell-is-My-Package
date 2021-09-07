@@ -94,7 +94,6 @@ public class PlayerController : MonoBehaviour
     void MovementSystem()
     {
         rigidbody2d.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed);
-
         VerifyDirection();
 
         //Attacks
@@ -208,9 +207,9 @@ public class PlayerController : MonoBehaviour
         audio2.Play();
     }
 
-    public void Hit(int amount)
+    public void Hit()
     {
-        this.health -= amount;
+        this.health--;
         animator.SetTrigger("Hit");
         PlaySound("Damaged");
 

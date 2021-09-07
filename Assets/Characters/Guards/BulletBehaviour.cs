@@ -8,8 +8,21 @@ public class BulletBehaviour : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            other.gameObject.GetComponent<PlayerController>().Hit(1);
+            other.gameObject.GetComponent<PlayerController>().Hit();
         }
+
+        if ( GetComponent<Collider>().gameObject.layer == LayerMask.NameToLayer("Guard") )
+        {
+            if (GetComponent<Collider>().gameObject.tag == "Pistol")
+                GetComponent<Collider>().gameObject.GetComponent<Guard_PistolControll>().Hit();
+            else if (GetComponent<Collider>().gameObject.tag == "Rifle")
+                GetComponent<Collider>().gameObject.GetComponent<Guard_RifleControll>().Hit();
+            else if (GetComponent<Collider>().gameObject.tag == "Rifle")
+                GetComponent<Collider>().gameObject.GetComponent<Guard_ShotgunControll>().Hit();
+        }
+
+        if ( GetComponent<Collider>().gameObject.layer == 1 << LayerMask.NameToLayer("Postman") )
+            GetComponent<Collider>().gameObject.GetComponent<PostmanController>().Hit();
         
         Destroy(this.gameObject);
     }

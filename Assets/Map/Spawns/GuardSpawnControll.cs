@@ -8,8 +8,13 @@ public class GuardSpawnControll : MonoBehaviour
     [SerializeField] GameObject S_guard;
     [SerializeField] GameObject R_guard;
 
-    public void Spawn(GameObject guardType)
+    public void Spawn(string guardType)
     {
-        Instantiate(guardType, this.gameObject.GetComponent<Transform>().position, gameObject.transform.rotation);
+        if (guardType == "Pistol")
+            Instantiate(P_guard, this.gameObject.GetComponent<Transform>().position, gameObject.transform.rotation);
+        else if (guardType == "Shotgun")
+            Instantiate(S_guard, this.gameObject.GetComponent<Transform>().position, gameObject.transform.rotation);
+        if (guardType == "Rifle")
+            Instantiate(R_guard, this.gameObject.GetComponent<Transform>().position, gameObject.transform.rotation);
     }
 }

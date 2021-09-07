@@ -9,19 +9,9 @@ public class BoxSpawnController : MonoBehaviour
     [SerializeField] GameObject mediumPackage; //20%
     [SerializeField] GameObject largePackage; //10%
 
-    public float spawnTimer;
-
-    void FixedUpdate()
+    public void Spawn()
     {
-        spawnTimer -= Time.deltaTime;
-        if (spawnTimer <= 0)
-            Spawn( selectPackageType(Random.Range(1, 11)) );
-    }
-
-    void Spawn(GameObject package)
-    {
-        Instantiate(package, this.gameObject.GetComponent<Transform>().position, gameObject.transform.rotation);
-        spawnTimer = 5;
+        Instantiate(selectPackageType(Random.Range(0,10)), this.gameObject.GetComponent<Transform>().position, gameObject.transform.rotation);
     }
 
     GameObject selectPackageType(int num)

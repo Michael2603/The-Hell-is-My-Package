@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 277841936922420208}
   m_Layer: 8
   m_Name: Guard - Rifle
-  m_TagString: Untagged
+  m_TagString: Rifle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -51,9 +51,6 @@ public class PostmanController : MonoBehaviour
             case "TrackPackage":
                 TrackPackage();
             break;
-            case "PickPackage":
-                PickPackage();
-            break;
             case "DeliveryPackage":
                 DeliveryPackage();
             break;
@@ -85,30 +82,11 @@ public class PostmanController : MonoBehaviour
         GoAfterTarget();
     } 
 
-    void PickPackage()
-    {
-        GoAfterTarget();
-
-        // if (reachedEndOfPath)
-        // {
-        //     target = deliveryPoints[Random.Range(0, deliveryPoints.Length)].GetComponent<Transform>();
-        //     state = "DeliveryPackage";
-        // }
-
-        // // Get the angle that the postman is pointing to by moving, using it, adds 2 check angles, one 45° upper and other 45° lower. These are used to check for walls and evade them
-        // Vector3 movement =  new Vector3(rigidbody2d.velocity.x, rigidbody2d.velocity.y, 0);
-        // float pointingAngle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
-
-        // Vector3 upperCast = Quaternion.AngleAxis(pointingAngle + 45 , Vector3.forward) * Vector3.right * 20;
-        // Vector3 lowerCast = Quaternion.AngleAxis(pointingAngle - 45, Vector3.forward) * Vector3.right * 20;
-
-    }
-
     void DeliveryPackage()
     {
         GoAfterTarget();
 
-        if (reachedEndOfPath)
+        if (reachedEndOfPath && transform.childCount == 0)
             state = "TrackPackage";
     }
 

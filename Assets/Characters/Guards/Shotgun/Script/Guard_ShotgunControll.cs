@@ -46,8 +46,11 @@ public class Guard_ShotgunControll : MonoBehaviour
     bool reachedEndOfPath = false;
     Seeker seeker;
 
+    ParticleSystem particleSystem;
+
     void Start()
     {
+        particleSystem = GetComponent<ParticleSystem>();
         rigidbody2d = GetComponent<Rigidbody2D>();
         collider2d = GetComponent<Collider2D>();
         transform = GetComponent<Transform>();
@@ -139,7 +142,7 @@ public class Guard_ShotgunControll : MonoBehaviour
                 rigidbody2d.velocity = new Vector3 (0,0,0);
 
                 Collider2D checkZone = Physics2D.OverlapCircle(transform.position, 10, 1 << LayerMask.NameToLayer("Player"));
-                if ( checkZone && detectionRate < 1)
+                if ( checkZone && detectionRate < 1.1)
                 {
                     detectionRate += Time.deltaTime * .8f;
                 }
@@ -232,14 +235,14 @@ public class Guard_ShotgunControll : MonoBehaviour
 
     void Shoot(Transform player)
     {
+        particleSystem.Play();
         // Returns player's angle relative to guard's position
         Vector3 relative = transform.InverseTransformPoint(player.position);
         float Angle = Mathf.Atan2(relative.y, relative.x) * Mathf.Rad2Deg;
-        rotationTransform.rotation = Quaternion.Euler(Vector3.forward * Angle);
+        var shape = particleSystem.shape;
 
-        GameObject tempBullet = Instantiate(this.bullet, bulletEmitter.position, rotationTransform.rotation);
-        Transform tempBulletTransform = tempBullet.GetComponent<Transform>();
-        tempBullet.GetComponent<Rigidbody2D>().AddForce(tempBulletTransform.right * bulletSpeed, ForceMode2D.Impulse);
+        shape.rotation = Vector3.forward * Angle;
+        particleSystem.Play();
 
         canShoot = false;
     }
@@ -272,6 +275,25 @@ public class Guard_ShotgunControll : MonoBehaviour
     public void Hit()
     {
         this.health -= 1;
+    }
+
+    void OnParticleCollision(GameObject other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            other.GetComponent<PlayerController>().Hit();
+        }
+        else if ( other.gameObject.layer == LayerMask.NameToLayer("Guard") )
+        {
+            if (other.gameObject.tag == "Pistol")
+                other.gameObject.GetComponent<Guard_PistolControll>().Hit();
+            else if (other.gameObject.tag == "Rifle")
+                other.gameObject.GetComponent<Guard_RifleControll>().Hit();
+            else if (other.gameObject.tag == "Rifle")
+                other.gameObject.GetComponent<Guard_ShotgunControll>().Hit();
+        }
+        else if ( other.gameObject.layer == LayerMask.NameToLayer("Postman") )
+            other.gameObject.GetComponent<PostmanController>().Hit();
     }
 
     void OnDrawGizmosSelected()

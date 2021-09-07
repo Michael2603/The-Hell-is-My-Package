@@ -1,0 +1,763 @@
+fileFormatVersion: 2
+guid: 558fb151b007f3a469d0b44c7ce19075
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData:
+  - name: Play
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 4
+      width: 667
+      height: 447
+    spriteID: d6372a9af7be8844189968d896ba081f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1810, y: -676}
+  - name: Options
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 459
+      width: 477
+      height: 224
+    spriteID: 8308d5c84ca253c4785f973397bac27a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1715, y: 9}
+  - name: Credits
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 691
+      width: 477
+      height: 198
+    spriteID: 339777622a3cf8149b60e3705e4b3199
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1715, y: 444}
+  - name: Exit
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3687
+      y: 266
+      width: 327
+      height: 144
+    spriteID: b31e2c3629536904db14ad2082b81816
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2310, y: 167}
+  - name: Play
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3497
+      y: 459
+      width: 538
+      height: 170
+    spriteID: 24b5f21270f62464a92e71678ef8bdc3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2224, y: -221}
+  - name: Options
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3687
+      y: 4
+      width: 389
+      height: 123
+    spriteID: 37a288bd9b9426a4297458e9e30adb4c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2339, y: -448}
+  - name: Credits
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3687
+      y: 135
+      width: 389
+      height: 123
+    spriteID: 4afbacde966b7874e8a33b41908499fa
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2339, y: -114}
+  - name: Exit
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 897
+      width: 267
+      height: 83
+    spriteID: 3e9312bf079dca04f811acfb84aa8b91
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1603, y: 798}
+  - name: fundo e titulo parados
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 3000
+      height: 1686
+    spriteID: a7addf57e657ae645bbb30989b98e3f7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  - name: Gif de fundo 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1698
+      width: 3000
+      height: 1686
+    spriteID: 8b8cca7a312219b4daaa77185d86d013
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1698}
+  rigSpriteImportData:
+  - name: Play
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 4
+      width: 667
+      height: 447
+    spriteID: e7eb2a32fa1333445afa27ae1bce1e4b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1810, y: -676}
+  - name: Options
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 459
+      width: 477
+      height: 224
+    spriteID: 9edbc96d7782e0548b10bd7275e87d25
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1715, y: 9}
+  - name: Credits
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 691
+      width: 477
+      height: 198
+    spriteID: c6d1949ee3d0d7546b29bd91448b0b31
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1715, y: 444}
+  - name: Exit
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3687
+      y: 266
+      width: 327
+      height: 144
+    spriteID: a0deb359f16909f43a7f51661c4bdcec
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2310, y: 167}
+  - name: Play
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3497
+      y: 459
+      width: 538
+      height: 170
+    spriteID: 0e6a5d8c77a0201428ceb89e1813c5c5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2224, y: -221}
+  - name: Options
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3687
+      y: 4
+      width: 389
+      height: 123
+    spriteID: fc665f30c34f755469ce33d6e5f2bc51
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2339, y: -448}
+  - name: Credits
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3687
+      y: 135
+      width: 389
+      height: 123
+    spriteID: b3c708101cc6ca840835ccf02984f966
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2339, y: -114}
+  - name: Exit
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 897
+      width: 267
+      height: 83
+    spriteID: a4de09f76ca5646478225cd9c422567a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1603, y: 798}
+  - name: fundo e titulo parados
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 3000
+      height: 1686
+    spriteID: 8fd5eb8a69551bb43beeafad7f3f28ec
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  - name: Gif de fundo 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1698
+      width: 3000
+      height: 1686
+    spriteID: cc4e0886d5484f54c8d55a8273fad2d1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1698}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  characterMode: 0
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 2048
+  importedTextureHeight: 2048
+  documentSize: {x: 3000, y: 1686}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 4096
+  textureActualHeight: 4096
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers:
+  - name: "bot\xF5es acesos"
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 290
+    mosaicPosition: {x: 0, y: 0}
+  - name: Play
+    spriteName: Play
+    isGroup: 0
+    parentIndex: 0
+    spriteID: d6372a9af7be8844189968d896ba081f
+    layerID: 289
+    mosaicPosition: {x: 3012, y: 4}
+  - name: Options
+    spriteName: Options
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 8308d5c84ca253c4785f973397bac27a
+    layerID: 266
+    mosaicPosition: {x: 3012, y: 459}
+  - name: Credits
+    spriteName: Credits
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 339777622a3cf8149b60e3705e4b3199
+    layerID: 238
+    mosaicPosition: {x: 3012, y: 691}
+  - name: Exit
+    spriteName: Exit
+    isGroup: 0
+    parentIndex: 0
+    spriteID: b31e2c3629536904db14ad2082b81816
+    layerID: 214
+    mosaicPosition: {x: 3687, y: 266}
+  - name: "bot\xF5es 1"
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 29
+    mosaicPosition: {x: 0, y: 0}
+  - name: Play
+    spriteName: Play
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 24b5f21270f62464a92e71678ef8bdc3
+    layerID: 100
+    mosaicPosition: {x: 3497, y: 459}
+  - name: Options
+    spriteName: Options
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 37a288bd9b9426a4297458e9e30adb4c
+    layerID: 102
+    mosaicPosition: {x: 3687, y: 4}
+  - name: Credits
+    spriteName: Credits
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 4afbacde966b7874e8a33b41908499fa
+    layerID: 54
+    mosaicPosition: {x: 3687, y: 135}
+  - name: Exit
+    spriteName: Exit
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 3e9312bf079dca04f811acfb84aa8b91
+    layerID: 62
+    mosaicPosition: {x: 3012, y: 897}
+  - name: fundo e titulo parados
+    spriteName: fundo e titulo parados
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a7addf57e657ae645bbb30989b98e3f7
+    layerID: 301
+    mosaicPosition: {x: 4, y: 4}
+  - name: Gif de fundo 2
+    spriteName: Gif de fundo 2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8b8cca7a312219b4daaa77185d86d013
+    layerID: 305
+    mosaicPosition: {x: 4, y: 1698}
+  rigPSDLayers:
+  - name: "bot\xF5es acesos"
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 290
+    mosaicPosition: {x: 0, y: 0}
+  - name: Play
+    spriteName: Play
+    isGroup: 0
+    parentIndex: 0
+    spriteID: e7eb2a32fa1333445afa27ae1bce1e4b
+    layerID: 289
+    mosaicPosition: {x: 3012, y: 4}
+  - name: Options
+    spriteName: Options
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 9edbc96d7782e0548b10bd7275e87d25
+    layerID: 266
+    mosaicPosition: {x: 3012, y: 459}
+  - name: Credits
+    spriteName: Credits
+    isGroup: 0
+    parentIndex: 0
+    spriteID: c6d1949ee3d0d7546b29bd91448b0b31
+    layerID: 238
+    mosaicPosition: {x: 3012, y: 691}
+  - name: Exit
+    spriteName: Exit
+    isGroup: 0
+    parentIndex: 0
+    spriteID: a0deb359f16909f43a7f51661c4bdcec
+    layerID: 214
+    mosaicPosition: {x: 3687, y: 266}
+  - name: "bot\xF5es 1"
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 29
+    mosaicPosition: {x: 0, y: 0}
+  - name: Play
+    spriteName: Play
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 0e6a5d8c77a0201428ceb89e1813c5c5
+    layerID: 100
+    mosaicPosition: {x: 3497, y: 459}
+  - name: Options
+    spriteName: Options
+    isGroup: 0
+    parentIndex: 5
+    spriteID: fc665f30c34f755469ce33d6e5f2bc51
+    layerID: 102
+    mosaicPosition: {x: 3687, y: 4}
+  - name: Credits
+    spriteName: Credits
+    isGroup: 0
+    parentIndex: 5
+    spriteID: b3c708101cc6ca840835ccf02984f966
+    layerID: 54
+    mosaicPosition: {x: 3687, y: 135}
+  - name: Exit
+    spriteName: Exit
+    isGroup: 0
+    parentIndex: 5
+    spriteID: a4de09f76ca5646478225cd9c422567a
+    layerID: 62
+    mosaicPosition: {x: 3012, y: 897}
+  - name: fundo e titulo parados
+    spriteName: fundo e titulo parados
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8fd5eb8a69551bb43beeafad7f3f28ec
+    layerID: 301
+    mosaicPosition: {x: 4, y: 4}
+  - name: Gif de fundo 2
+    spriteName: Gif de fundo 2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cc4e0886d5484f54c8d55a8273fad2d1
+    layerID: 305
+    mosaicPosition: {x: 4, y: 1698}
+  sharedRigPSDLayers: []
+  generateGOHierarchy: 0
+  textureAssetName: Menu para passar para o Mike Texture
+  prefabAssetName: Menu para passar para o Mike Prefab
+  spriteLibAssetName: Menu para passar para o Mike Sprite Lib
+  skeletonAssetName: Menu para passar para o Mike Skeleton
+  secondarySpriteTextures: []

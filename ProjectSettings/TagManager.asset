@@ -8,6 +8,9 @@ TagManager:
   - Post
   - DeliveryPoint
   - WaitingPoint
+  - Pistol
+  - Rifle
+  - Shotgun
   layers:
   - Default
   - TransparentFX

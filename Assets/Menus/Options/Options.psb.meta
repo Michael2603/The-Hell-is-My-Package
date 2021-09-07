@@ -1,0 +1,735 @@
+fileFormatVersion: 2
+guid: 0c36f5b9e94dd3d4aa418149a02c5acd
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData:
+  - name: Pino master sound
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 230
+      width: 95
+      height: 69
+    spriteID: aef0fdaafe0eb8944b5a4c178885798a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2007, y: -784}
+  - name: Barra de limite master sound
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3392
+      width: 1587
+      height: 780
+    spriteID: 70ebfc8c01129154abbd0586facdf5ec
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -752, y: 2704}
+  - name: Pino brightness
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 307
+      width: 95
+      height: 69
+    spriteID: d11f63270088b92439c8c469266e8c39
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2007, y: -265}
+  - name: Barra de limite Brightness
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4180
+      width: 1552
+      height: 219
+    spriteID: 9f04e5ff70223ec4f9816bed6ab5aff1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -725, y: 3711}
+  - name: Options
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 4
+      width: 484
+      height: 94
+    spriteID: 63329190795fbe54987f084eaaa4b2ee
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1738, y: -1376}
+  - name: brightness
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 106
+      width: 418
+      height: 54
+    spriteID: 56e550c244f32a84eb57b3625753c8cb
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1704, y: -635}
+  - name: Master sound
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3504
+      y: 4
+      width: 519
+      height: 54
+    spriteID: 5256a992cf4df404fbf93cc48d2e5a8d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2246, y: -1145}
+  - name: Back
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 168
+      width: 176
+      height: 54
+    spriteID: 75bd058cbecac6a4180afcf7718743c2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2898, y: 61}
+  - name: Fundo parado
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 3000
+      height: 1686
+    spriteID: 3d5adeff07abe5e45a15ce144e95499b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  - name: Plano de Fundo
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1698
+      width: 3000
+      height: 1686
+    spriteID: 1997c5767d744ba4eaab33eb2ea3cd58
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1698}
+  rigSpriteImportData:
+  - name: Pino master sound
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 230
+      width: 95
+      height: 69
+    spriteID: 9ee6c046729a5394f9c7f603cfaac590
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2007, y: -784}
+  - name: Barra de limite master sound
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3392
+      width: 1587
+      height: 780
+    spriteID: e6368d1f4427e504c988c81b4307ebd0
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -752, y: 2704}
+  - name: Pino brightness
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 307
+      width: 95
+      height: 69
+    spriteID: 11e6e9ce430157046a0cebcba856c4df
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2007, y: -265}
+  - name: Barra de limite Brightness
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4180
+      width: 1552
+      height: 219
+    spriteID: 1d9e8373603d47f48a6a91105c42d507
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -725, y: 3711}
+  - name: Options
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 4
+      width: 484
+      height: 94
+    spriteID: 5d04d253ed9938343a9b526bb0d4f83f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1738, y: -1376}
+  - name: brightness
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 106
+      width: 418
+      height: 54
+    spriteID: ed78374bb73cad04384b03eeea356eee
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1704, y: -635}
+  - name: Master sound
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3504
+      y: 4
+      width: 519
+      height: 54
+    spriteID: bfa4aa3f2f602cf4291020a1ee8b46d4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2246, y: -1145}
+  - name: Back
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3012
+      y: 168
+      width: 176
+      height: 54
+    spriteID: 3f7ab2137ba5c0146a08054cc3d9d6fa
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2898, y: 61}
+  - name: Fundo parado
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 3000
+      height: 1686
+    spriteID: 7e5434403d1bd2f4e91a28f68f7b7d3e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  - name: Plano de Fundo
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1698
+      width: 3000
+      height: 1686
+    spriteID: 372a1c31089e9614f8d5d4354a84df16
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1698}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  characterMode: 0
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 1024
+  importedTextureHeight: 2048
+  documentSize: {x: 3000, y: 1686}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 4096
+  textureActualHeight: 8192
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers:
+  - name: Pino master sound
+    spriteName: Pino master sound
+    isGroup: 0
+    parentIndex: -1
+    spriteID: aef0fdaafe0eb8944b5a4c178885798a
+    layerID: 13
+    mosaicPosition: {x: 3012, y: 230}
+  - name: Barra de limite master sound
+    spriteName: Barra de limite master sound
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 70ebfc8c01129154abbd0586facdf5ec
+    layerID: 23
+    mosaicPosition: {x: 4, y: 3392}
+  - name: Pino brightness
+    spriteName: Pino brightness
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d11f63270088b92439c8c469266e8c39
+    layerID: 17
+    mosaicPosition: {x: 3012, y: 307}
+  - name: Barra de limite Brightness
+    spriteName: Barra de limite Brightness
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9f04e5ff70223ec4f9816bed6ab5aff1
+    layerID: 25
+    mosaicPosition: {x: 4, y: 4180}
+  - name: Options
+    spriteName: Options
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 63329190795fbe54987f084eaaa4b2ee
+    layerID: 7
+    mosaicPosition: {x: 3012, y: 4}
+  - name: brightness
+    spriteName: brightness
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 56e550c244f32a84eb57b3625753c8cb
+    layerID: 9
+    mosaicPosition: {x: 3012, y: 106}
+  - name: Master sound
+    spriteName: Master sound
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5256a992cf4df404fbf93cc48d2e5a8d
+    layerID: 8
+    mosaicPosition: {x: 3504, y: 4}
+  - name: Back
+    spriteName: Back
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 75bd058cbecac6a4180afcf7718743c2
+    layerID: 10
+    mosaicPosition: {x: 3012, y: 168}
+  - name: Fundo parado
+    spriteName: Fundo parado
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3d5adeff07abe5e45a15ce144e95499b
+    layerID: 22
+    mosaicPosition: {x: 4, y: 4}
+  - name: Plano de Fundo
+    spriteName: Plano de Fundo
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1997c5767d744ba4eaab33eb2ea3cd58
+    layerID: 1
+    mosaicPosition: {x: 4, y: 1698}
+  rigPSDLayers:
+  - name: Pino master sound
+    spriteName: Pino master sound
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9ee6c046729a5394f9c7f603cfaac590
+    layerID: 13
+    mosaicPosition: {x: 3012, y: 230}
+  - name: Barra de limite master sound
+    spriteName: Barra de limite master sound
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e6368d1f4427e504c988c81b4307ebd0
+    layerID: 23
+    mosaicPosition: {x: 4, y: 3392}
+  - name: Pino brightness
+    spriteName: Pino brightness
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 11e6e9ce430157046a0cebcba856c4df
+    layerID: 17
+    mosaicPosition: {x: 3012, y: 307}
+  - name: Barra de limite Brightness
+    spriteName: Barra de limite Brightness
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1d9e8373603d47f48a6a91105c42d507
+    layerID: 25
+    mosaicPosition: {x: 4, y: 4180}
+  - name: Options
+    spriteName: Options
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5d04d253ed9938343a9b526bb0d4f83f
+    layerID: 7
+    mosaicPosition: {x: 3012, y: 4}
+  - name: brightness
+    spriteName: brightness
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ed78374bb73cad04384b03eeea356eee
+    layerID: 9
+    mosaicPosition: {x: 3012, y: 106}
+  - name: Master sound
+    spriteName: Master sound
+    isGroup: 0
+    parentIndex: -1
+    spriteID: bfa4aa3f2f602cf4291020a1ee8b46d4
+    layerID: 8
+    mosaicPosition: {x: 3504, y: 4}
+  - name: Back
+    spriteName: Back
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3f7ab2137ba5c0146a08054cc3d9d6fa
+    layerID: 10
+    mosaicPosition: {x: 3012, y: 168}
+  - name: Fundo parado
+    spriteName: Fundo parado
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7e5434403d1bd2f4e91a28f68f7b7d3e
+    layerID: 22
+    mosaicPosition: {x: 4, y: 4}
+  - name: Plano de Fundo
+    spriteName: Plano de Fundo
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 372a1c31089e9614f8d5d4354a84df16
+    layerID: 1
+    mosaicPosition: {x: 4, y: 1698}
+  sharedRigPSDLayers: []
+  generateGOHierarchy: 0
+  textureAssetName: Options Texture
+  prefabAssetName: Options Prefab
+  spriteLibAssetName: Options Sprite Lib
+  skeletonAssetName: Options Skeleton
+  secondarySpriteTextures: []
