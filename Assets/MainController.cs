@@ -9,6 +9,11 @@ public class MainController : MonoBehaviour
     [SerializeField] GameObject MainMenuLayout;
     [SerializeField] GameObject OptionsLayout;
     [SerializeField] GameObject CreditsLayout;
+    
+    [SerializeField] GameObject LightingButton;
+    public bool improvedLighting = true;
+    public Sprite lightOn;
+    public Sprite lightOff;
 
     [SerializeField] Slider soundBar;
 
@@ -45,6 +50,15 @@ public class MainController : MonoBehaviour
         public void Exit()
         {
             Application.Quit();
+        }
+
+        public void ImprovedLighting()
+        {
+            improvedLighting = !improvedLighting;
+            if ( improvedLighting )
+                LightingButton.GetComponent<Image>().sprite = lightOn;
+            else if ( !improvedLighting )
+                LightingButton.GetComponent<Image>().sprite = lightOff;
         }
 
     public void MasterSound()

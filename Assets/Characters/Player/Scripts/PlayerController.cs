@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
+    [SerializeField] GameObject PauseMenu;
+    [SerializeField] GameObject GameHud;
     ItemsManager itemsMg;
 
     Rigidbody2D rigidbody2d;
@@ -86,7 +88,11 @@ public class PlayerController : MonoBehaviour
                 audio.Play();
         }
 
-        
+        if ( Input.GetKeyDown(KeyCode.Escape) )
+        {
+            PauseMenu.SetActive(true);
+            GameHud.SetActive(false);
+        }
         MovementSystem();
         HealthManager();
     }
