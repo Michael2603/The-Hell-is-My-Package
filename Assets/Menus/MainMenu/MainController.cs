@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Universal;
 
 public class MainController : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class MainController : MonoBehaviour
     [SerializeField] GameObject CreditsLayout;
     
     [SerializeField] GameObject LightingButton;
-    public bool improvedLighting = true;
     public Sprite lightOn;
     public Sprite lightOff;
 
@@ -54,15 +54,20 @@ public class MainController : MonoBehaviour
 
         public void ImprovedLighting()
         {
-            improvedLighting = !improvedLighting;
-            if ( improvedLighting )
+            UniversalScript.betterLightin = !UniversalScript.betterLightin;
+            if ( UniversalScript.betterLightin )
                 LightingButton.GetComponent<Image>().sprite = lightOn;
-            else if ( !improvedLighting )
+            else if ( !UniversalScript.betterLightin )
                 LightingButton.GetComponent<Image>().sprite = lightOff;
         }
 
     public void MasterSound()
     {
-        AudioListener.volume = soundBar.value;
+        UniversalScript.soundVolume = soundBar.value;
+    }
+
+    void Update()
+    {
+        AudioListener.volume = UniversalScript.soundVolume;
     }
 }

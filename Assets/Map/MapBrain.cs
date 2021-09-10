@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using Universal;
 
 public class MapBrain : MonoBehaviour
 {
+    [SerializeField] GameObject Lamps;
+    public UnityEngine.Experimental.Rendering.Universal.Light2D globalLight;
+
     [SerializeField] float insanityLevel = 0;
     public void SetInsanityLevel(float amount)
     {
@@ -17,6 +23,40 @@ public class MapBrain : MonoBehaviour
     [SerializeField] List<SpawnControll> postmanSpawnsControll = new List<SpawnControll>();
     [SerializeField] GuardSpawnControll guardsSpawnControll;
     [SerializeField] List<BoxSpawnController> boxSpawnControllers = new List<BoxSpawnController>();
+
+    [SerializeField] GameObject PauseHud;
+    [SerializeField] GameObject OptionsHud;
+    [SerializeField] GameObject GameHud;
+
+    [SerializeField] Slider soundBar;
+
+    [SerializeField] GameObject LightingButton;
+    [SerializeField] Sprite lightOn;
+    [SerializeField] Sprite lightOff;
+
+    void Update()
+    {
+        // Adjust automatically the global sound volume and the lightin quality from options menu's configuratioins
+        AudioListener.volume = UniversalScript.soundVolume;
+        if (UniversalScript.betterLightin)
+        {
+            Lamps.SetActive(true);
+            globalLight.intensity = .7f;
+        }
+        else
+        {
+            Lamps.SetActive(false);
+            globalLight.intensity = 1.2f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if ( PauseHud.activeSelf )
+                this.BackToGame();
+            else
+                this.PauseMenu();
+        }
+    }
 
     void FixedUpdate()
     {
@@ -99,5 +139,43 @@ public class MapBrain : MonoBehaviour
                 boxTimer = 15;
             }
         }
+    }
+
+    public void OptionsMenu()
+    {
+        PauseHud.SetActive(false);
+        OptionsHud.SetActive(true);
+    }
+    
+    public void BackToGame()
+    {
+        PauseHud.SetActive(false);
+        GameHud.SetActive(true);
+    }
+
+    public void PauseMenu()
+    {
+        GameHud.SetActive(false);
+        PauseHud.SetActive(true);
+        OptionsHud.SetActive(false);
+    }
+
+    public void ImprovedLighting()
+    {
+        UniversalScript.betterLightin = !UniversalScript.betterLightin;
+        if ( UniversalScript.betterLightin )
+            LightingButton.GetComponent<Image>().sprite = lightOn;
+        else if ( !UniversalScript.betterLightin )
+            LightingButton.GetComponent<Image>().sprite = lightOff;
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void MasterSound()
+    {
+        UniversalScript.soundVolume = soundBar.value;
     }
 }

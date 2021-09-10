@@ -6,6 +6,7 @@ public class BulletBehaviour : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D other)
     {
+        Destroy(this.gameObject);
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             other.gameObject.GetComponent<PlayerController>().Hit();
@@ -24,6 +25,5 @@ public class BulletBehaviour : MonoBehaviour
         if ( GetComponent<Collider>().gameObject.layer == 1 << LayerMask.NameToLayer("Postman") )
             GetComponent<Collider>().gameObject.GetComponent<PostmanController>().Hit();
         
-        Destroy(this.gameObject);
     }
 }

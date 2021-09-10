@@ -88,11 +88,11 @@ public class PlayerController : MonoBehaviour
                 audio.Play();
         }
 
-        if ( Input.GetKeyDown(KeyCode.Escape) )
-        {
-            PauseMenu.SetActive(true);
-            GameHud.SetActive(false);
-        }
+        // if ( Input.GetKeyDown(KeyCode.Escape) )
+        // {
+        //     PauseMenu.SetActive(true);
+        //     GameHud.SetActive(false);
+        // }
         MovementSystem();
         HealthManager();
     }
