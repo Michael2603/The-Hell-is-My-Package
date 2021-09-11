@@ -90,8 +90,16 @@ public class Guard_ShotgunControll : MonoBehaviour
                 canShoot = true;
             }
         }
+
+        if ( rigidbody2d.velocity.x <= .01f )
+            transform.localScale = new Vector3( Mathf.Abs(transform.localScale.x), transform.localScale.y, 0 );
+        else if ( rigidbody2d.velocity.x >= -.01f )
+            transform.localScale = new Vector3( -Mathf.Abs(transform.localScale.x), transform.localScale.y, 0 );
+
         animator.SetFloat("MoveX", rigidbody2d.velocity.x);
         animator.SetFloat("MoveY", rigidbody2d.velocity.y);
+
+        HealthManager();
     }
 
     //Controls the detection mechanics
@@ -99,9 +107,6 @@ public class Guard_ShotgunControll : MonoBehaviour
     {
         slider.value = detectionRate;
         fill.color = gradient.Evaluate(slider.normalizedValue);
-
-        if (detectionRate > .6f)
-            Debug.Log("I think I saw something strange...");
 
         // If finds the player, starts shooting him and call other guards close by
         if (detectionRate >= 1 && lostContact == true)
@@ -263,7 +268,9 @@ public class Guard_ShotgunControll : MonoBehaviour
     {
         if (this.health <= 0)
         {
-            animator.SetTrigger("Dead");
+            rigidbody2d.velocity = new Vector3(0,0,0);
+            collider2d.enabled = false;
+            canShoot = false;
         }
     }
 
@@ -274,7 +281,12 @@ public class Guard_ShotgunControll : MonoBehaviour
 
     public void Hit()
     {
-        this.health -= 1;
+        this.health--;
+
+        if (health <= 0)
+            animator.SetTrigger("Dead");
+        else
+            animator.SetTrigger("Hit");
     }
 
     void OnParticleCollision(GameObject other)

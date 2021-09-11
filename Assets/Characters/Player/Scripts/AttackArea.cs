@@ -33,7 +33,7 @@ public class AttackArea : MonoBehaviour
                 collider.gameObject.GetComponent<Guard_PistolControll>().Hit();
             else if (collider.gameObject.tag == "Rifle")
                 collider.gameObject.GetComponent<Guard_RifleControll>().Hit();
-            else if (collider.gameObject.tag == "Rifle")
+            else if (collider.gameObject.tag == "Shotgun")
                 collider.gameObject.GetComponent<Guard_ShotgunControll>().Hit();
         }
 

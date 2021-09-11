@@ -680,7 +680,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -763,9 +763,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da372d9ae4dd7ee40bc8fe0ce2fe7ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolType: 
-  moveSpeed: 100
-  slider: {fileID: 0}
+  patrolType: Route
+  moveSpeed: 200
+  slider: {fileID: 2823449964230492579}
   gradient:
     serializedVersion: 2
     key0: {r: 0.5817752, g: 0.38426486, b: 0.7924528, a: 1}

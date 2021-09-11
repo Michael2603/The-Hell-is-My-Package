@@ -35,7 +35,7 @@ public class Transition01_B : StateMachineBehaviour
             else if (PlayerController.instance.direction.y < 0)
                PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(1).GetChild(1).gameObject.SetActive(true);
             else
-               PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(0).GetChild(0).gameObject.SetActive(true);
+               PlayerController.instance.gameObject.GetComponent<Transform>().GetChild(0).GetChild(1).gameObject.SetActive(true);
        }
     }
 

@@ -88,7 +88,6 @@ public class PostmanController : MonoBehaviour
 
         if (this.health <= 0)
         {
-            // animator.SetBool("Dead", true);
             rigidbody2d.velocity = new Vector3(0,0,0);
             coll.enabled = false;
             specialPostman = false;

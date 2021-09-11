@@ -214,7 +214,7 @@ Animator:
   m_GameObject: {fileID: 3290981102978424572}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ef0bbba9fc842f4449baabc6eb57529d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 02261059caefe2041958162eff83336e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -236,7 +236,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -279,7 +279,7 @@ MonoBehaviour:
   - {fileID: 9100000, guid: fda839a0074ae7b4da09240c218d6112, type: 2}
   - {fileID: 9100000, guid: e47834eef0514944e99b12de0c620ea3, type: 2}
   - {fileID: 9100000, guid: 02261059caefe2041958162eff83336e, type: 2}
-  moveSpeed: 10
+  moveSpeed: 25
   state: TrackPackage
   target: {fileID: 0}
   nextWayPoinDistance: 3
