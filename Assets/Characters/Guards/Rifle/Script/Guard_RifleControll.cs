@@ -119,7 +119,6 @@ public class Guard_RifleControll : MonoBehaviour
                 else if (name.Contains("Shotgun"))
                     otherGuards[i].gameObject.GetComponent<Guard_ShotgunControll>().Called(playerTransform);
             }
-
         }
         if (detectionRate <= 0)
         {

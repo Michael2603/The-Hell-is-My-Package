@@ -12,18 +12,18 @@ public class BulletBehaviour : MonoBehaviour
             other.gameObject.GetComponent<PlayerController>().Hit();
         }
 
-        if ( GetComponent<Collider>().gameObject.layer == LayerMask.NameToLayer("Guard") )
+        if ( GetComponent<Collider2D>().gameObject.layer == LayerMask.NameToLayer("Guard") )
         {
-            if (GetComponent<Collider>().gameObject.tag == "Pistol")
-                GetComponent<Collider>().gameObject.GetComponent<Guard_PistolControll>().Hit();
-            else if (GetComponent<Collider>().gameObject.tag == "Rifle")
-                GetComponent<Collider>().gameObject.GetComponent<Guard_RifleControll>().Hit();
-            else if (GetComponent<Collider>().gameObject.tag == "Rifle")
-                GetComponent<Collider>().gameObject.GetComponent<Guard_ShotgunControll>().Hit();
+            if (GetComponent<Collider2D>().gameObject.tag == "Pistol")
+                GetComponent<Collider2D>().gameObject.GetComponent<Guard_PistolControll>().Hit();
+            else if (GetComponent<Collider2D>().gameObject.tag == "Rifle")
+                GetComponent<Collider2D>().gameObject.GetComponent<Guard_RifleControll>().Hit();
+            else if (GetComponent<Collider2D>().gameObject.tag == "Rifle")
+                GetComponent<Collider2D>().gameObject.GetComponent<Guard_ShotgunControll>().Hit();
         }
 
-        if ( GetComponent<Collider>().gameObject.layer == 1 << LayerMask.NameToLayer("Postman") )
-            GetComponent<Collider>().gameObject.GetComponent<PostmanController>().Hit();
+        if ( GetComponent<Collider2D>().gameObject.layer == LayerMask.NameToLayer("Postman") )
+            GetComponent<Collider2D>().gameObject.GetComponent<PostmanController>().Hit();
         
     }
 }

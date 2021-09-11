@@ -6,7 +6,7 @@ public class AttackArea : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.name.Contains("Bullet") )
+        if ( collider.gameObject.layer == LayerMask.NameToLayer("Bullet") )
         {
             Transform bltTransform = collider.gameObject.GetComponent<Transform>();
             Rigidbody2D bltRigidbody2d = collider.gameObject.GetComponent<Rigidbody2D>();
@@ -37,7 +37,7 @@ public class AttackArea : MonoBehaviour
                 collider.gameObject.GetComponent<Guard_ShotgunControll>().Hit();
         }
 
-        if ( collider.gameObject.layer == 1 << LayerMask.NameToLayer("Postman") )
+        if ( collider.gameObject.layer == LayerMask.NameToLayer("Postman") )
             collider.gameObject.GetComponent<PostmanController>().Hit();
     }
 }

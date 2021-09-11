@@ -5,6 +5,8 @@ using Pathfinding;
 
 public class PostmanController : MonoBehaviour
 {
+    public bool specialPostman = false; // Special postmans can shoot letters
+
     public Rigidbody2D rigidbody2d;
     Collider2D coll;
     Transform transform;
@@ -28,6 +30,14 @@ public class PostmanController : MonoBehaviour
 
     int health = 3;
 
+    [SerializeField] float shootTimer;
+    float Timer;
+    [SerializeField] Transform rotationTransform;
+    [SerializeField] Transform letterEmitter;
+    [SerializeField] GameObject letter;
+    [SerializeField] float letterSpeed;
+    bool canShoot = true;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -41,7 +51,10 @@ public class PostmanController : MonoBehaviour
         deliveryPoints = GameObject.FindGameObjectsWithTag("DeliveryPoint");
         target = waitingPoints[Random.Range(0, waitingPoints.Length)].gameObject.GetComponent<Transform>();
 
-       InvokeRepeating("UpdatePath", 0, .5f);
+        InvokeRepeating("UpdatePath", 0, .5f);
+
+        if (Random.Range(0,100) <= 15)
+            specialPostman = true;
     }
 
     void FixedUpdate()
@@ -58,6 +71,28 @@ public class PostmanController : MonoBehaviour
 
         animator.SetFloat("MoveX", rigidbody2d.velocity.x);
         animator.SetFloat("MoveY", rigidbody2d.velocity.y);
+
+        if (specialPostman)
+            TrackPlayer();
+
+        if (!canShoot) // This can limit the amount of bullets that are shooted
+        {
+            Timer -= Time.deltaTime;
+
+            if (Timer <= 0)
+            {
+                canShoot = true;
+                Timer = shootTimer;
+            }
+        }
+
+        if (this.health <= 0)
+        {
+            // animator.SetBool("Dead", true);
+            rigidbody2d.velocity = new Vector3(0,0,0);
+            coll.enabled = false;
+            specialPostman = false;
+        }
     }
 
     void TrackPackage()
@@ -80,7 +115,7 @@ public class PostmanController : MonoBehaviour
             box = null;
 
         GoAfterTarget();
-    } 
+    }
 
     void DeliveryPackage()
     {
@@ -107,6 +142,31 @@ public class PostmanController : MonoBehaviour
             state = "DeliveryPackage";
             target = deliveryPoints[Random.Range(0, deliveryPoints.Length)].GetComponent<Transform>();
         }
+    }
+
+
+    void TrackPlayer()
+    {
+        Collider2D player = Physics2D.OverlapCircle(rigidbody2d.position, 10, 1 << LayerMask.NameToLayer("Player"));
+        if (player != null && canShoot)
+        {
+            Shoot( player.gameObject.GetComponent<Transform>() );
+        }
+    }
+
+    void Shoot(Transform player)
+    {
+        // Returns player's angle relative to guard's position
+        Vector3 relative = transform.InverseTransformPoint(player.position);
+        float Angle = Mathf.Atan2(relative.y, relative.x) * Mathf.Rad2Deg;
+        rotationTransform.rotation = Quaternion.Euler(Vector3.forward * Angle);
+
+        GameObject tempLetter = Instantiate(this.letter, letterEmitter.position, rotationTransform.rotation);
+        Transform tempLetterTransform = tempLetter.GetComponent<Transform>();
+        tempLetter.GetComponent<Rigidbody2D>().AddForce(tempLetterTransform.right * letterSpeed, ForceMode2D.Impulse);
+
+        animator.SetTrigger("Shoot");
+        canShoot = false;
     }
 
     void OnDrawGizmosSelected()
@@ -159,8 +219,17 @@ public class PostmanController : MonoBehaviour
     public void Hit()
     {
         this.health--;
-        animator.SetTrigger("Hit");
-        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+
+        if (health <= 0)
+            animator.SetTrigger("Dead");
+        else
+            animator.SetTrigger("Hit");
+
+    }
+
+    public void Dead()
+    {
+        Destroy(this.gameObject);
     }
 
     void HealthManager()
