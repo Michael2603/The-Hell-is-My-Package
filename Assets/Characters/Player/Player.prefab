@@ -487,7 +487,7 @@ MonoBehaviour:
   takeDamage1: {fileID: 8300000, guid: 49d4c68de31a2c14b830c818ffc04740, type: 3}
   takeDamage2: {fileID: 8300000, guid: 393836cb5a5f196428837d2a272c5c23, type: 3}
   takeDamage3: {fileID: 8300000, guid: de2c3ab856765a242a3093bda5d0035b, type: 3}
-  checkBoxTimer: 5
+  checkBoxTimer: 4
   SideAtk1: {fileID: 511233552}
   SideAtk2: {fileID: 1183978777}
   SideAtk3: {fileID: 1469344665}
@@ -510,7 +510,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsList: []
-  specialDeliverySpace: {fileID: 0}
+  invoice: 0
+  myPackage: 0
 --- !u!61 &1968573740
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -568,7 +569,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0c93e47ff3fa4a1499a73ab0e0ac1091, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0

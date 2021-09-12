@@ -50,7 +50,6 @@ public class PlayerController : MonoBehaviour
     float moveY;
     float idleTimer;
 
-
     void Awake()
     {
         instance = this;
@@ -89,6 +88,7 @@ public class PlayerController : MonoBehaviour
         }
 
         MovementSystem();
+        ObjectiveController();
         HealthManager();
     }
 
@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(1))
         {
-            checkBoxTimer = 5;
+            checkBoxTimer = 4;
             boxCheckLocked = null;
             if (audio2.isPlaying)
                 audio2.Stop();
@@ -160,6 +160,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void ObjectiveController()
+    {
+        if (itemsMg.invoice)
+        {
+            Debug.Log("You got the invoice, put it on your package and send it to your home. Wops... you dont have your package. TAKE IT!");
+        }
+        else if (itemsMg.myPackage)
+        {
+            Debug.Log("Now GO send it yourself!");
+        }
+
+    }
+
     void HealthManager()
     {
         slider.value = health;
@@ -167,12 +180,14 @@ public class PlayerController : MonoBehaviour
 
     void CheckPackage(GameObject box)
     {
-        if (box.name.Contains("Big"))
-            checkBoxTimer -= Time.deltaTime * .4f;
-        if (box.name.Contains("Medium"))
+        if (box.name.Contains("Large"))
             checkBoxTimer -= Time.deltaTime * .7f;
+        if (box.name.Contains("Medium"))
+            checkBoxTimer -= Time.deltaTime * .9f;
         if (box.name.Contains("Small"))
-            checkBoxTimer -= Time.deltaTime;
+            checkBoxTimer -= Time.deltaTime * 1.2f;
+        if (box.name.Contains("Mini"))
+            checkBoxTimer -= Time.deltaTime * 1.5f;
 
         if (checkBoxTimer <= 0)
         {

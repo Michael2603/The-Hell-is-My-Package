@@ -7,9 +7,18 @@ public class BoxController : MonoBehaviour
     GameObject SD;
     int targetedID = 0;
 
-    public GameObject Openned()
+    public bool playersBox = false;
+    public ItemsManager items;
+
+    void Start()
     {
-        return SD;
+        items = GameObject.Find("Player").GetComponent<ItemsManager>();
+    }
+
+    public void Openned()
+    {
+        items.GotMyPackage();
+        Destroy(this.gameObject);
     }
 
     // The first postman to target this box will lock it so no one else can target on it.

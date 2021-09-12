@@ -96,7 +96,7 @@ public class PostmanController : MonoBehaviour
 
     void TrackPackage()
     {
-        if (transform.childCount > 0)
+        if (transform.childCount > 1)
         {
             state = "DeliveryPackage";
             target = deliveryPoints[Random.Range(0, deliveryPoints.Length)].GetComponent<Transform>();
@@ -140,6 +140,11 @@ public class PostmanController : MonoBehaviour
             
             state = "DeliveryPackage";
             target = deliveryPoints[Random.Range(0, deliveryPoints.Length)].GetComponent<Transform>();
+        }
+
+        if ( state == "DeliveryPackage" && (other.gameObject.tag == "DeliveryPoint") )
+        {
+            state = "TrackPackage";
         }
     }
 

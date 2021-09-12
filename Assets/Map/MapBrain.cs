@@ -114,7 +114,7 @@ public class MapBrain : MonoBehaviour
                 boxTimer = 20;
             }
         }
-        else if (insanityLevel >= 3 && insanityLevel < 4)
+        else if (insanityLevel >= 3 && insanityLevel <= 4)
         {
             if (guardTimer <= 0) // Spanw a guard
             {

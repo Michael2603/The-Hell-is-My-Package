@@ -6,7 +6,7 @@ public class ObjectiveController : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D otherCollider)
     {
-        if ( otherCollider.gameObject.layer == LayerMask.NameToLayer("Box"))
+        if (this.gameObject.tag == "DeliveryPoint" && otherCollider.gameObject.layer == LayerMask.NameToLayer("Box"))
         {
             Transform boxPos = otherCollider.GetComponent<Transform>();
 
@@ -20,7 +20,7 @@ public class ObjectiveController : MonoBehaviour
             boxPos.localPosition = randomPosition;
         }
 
-        if (otherCollider.gameObject.layer == LayerMask.NameToLayer("Guard"))
+        if (this.gameObject.tag == "Post" && otherCollider.gameObject.layer == LayerMask.NameToLayer("Guard"))
         {
             Transform guardTransform = otherCollider.GetComponent<Transform>();
             string name = otherCollider.gameObject.name;

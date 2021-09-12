@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8586336783608873730}
   - component: {fileID: 5761342450696023977}
   m_Layer: 7
-  m_Name: Box_Mediun
+  m_Name: Box_Medium
   m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,6 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1ead5b7a3339b478f9b01f43f6be22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playersBox: 0
+  items: {fileID: 6215308790073436579, guid: ce1dd440cdae27c45a3bf8b735c2a48b, type: 3}
 --- !u!58 &5761342450696023977
 CircleCollider2D:
   m_ObjectHideFlags: 0

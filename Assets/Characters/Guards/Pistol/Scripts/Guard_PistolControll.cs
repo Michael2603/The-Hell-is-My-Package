@@ -266,6 +266,11 @@ public class Guard_PistolControll : MonoBehaviour
     public void ReachedPost()
     {
         reachedPost = true;
+        if ( Random.Range(0, 100) < 10)
+        {
+            this.patrolType = "Idle";
+            this.target = null;
+        }
     }
 
     public void Called(Transform player)
