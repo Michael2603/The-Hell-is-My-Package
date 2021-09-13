@@ -16,6 +16,7 @@ public class MainController : MonoBehaviour
     public Sprite lightOff;
 
     [SerializeField] Slider soundBar;
+    [SerializeField] AudioSource selectedButton;
 
     //Buttons
         public void LoadGame()
@@ -59,6 +60,11 @@ public class MainController : MonoBehaviour
                 LightingButton.GetComponent<Image>().sprite = lightOn;
             else if ( !UniversalScript.betterLightin )
                 LightingButton.GetComponent<Image>().sprite = lightOff;
+        }
+
+        public void SelectedSound()
+        {
+            selectedButton.Play();
         }
 
     public void MasterSound()

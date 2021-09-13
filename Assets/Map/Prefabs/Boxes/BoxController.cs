@@ -17,7 +17,9 @@ public class BoxController : MonoBehaviour
 
     public void Openned()
     {
-        items.GotMyPackage();
+        if (playersBox)
+            items.GotMyPackage();
+            
         Destroy(this.gameObject);
     }
 
@@ -34,6 +36,11 @@ public class BoxController : MonoBehaviour
         else
             targetedID = ID;
             return true;
+    }
+
+    public void SelectedPackage()
+    {
+        this.playersBox = true;
     }
 
     public void Untarget(string name)

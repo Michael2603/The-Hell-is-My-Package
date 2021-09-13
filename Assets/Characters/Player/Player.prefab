@@ -477,6 +477,7 @@ MonoBehaviour:
   PauseMenu: {fileID: 0}
   GameHud: {fileID: 0}
   moveSpeed: 10
+  animator: {fileID: 0}
   canReceiveInput: 0
   inputReceived: 0
   audio: {fileID: 978570835}

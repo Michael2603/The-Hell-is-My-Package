@@ -32,8 +32,15 @@ public class ItemsManager : MonoBehaviour
     {
         if ( myPackage == true && invoice == true )
         {
-            if ( other.gameObject.name.Contains("Truck") && Input.GetMouseButton(0))
+            if ( other.gameObject.layer == LayerMask.NameToLayer("Truck") && Input.GetMouseButton(1))
+            {
                 other.gameObject.GetComponent<TruckController>().Depart();
+                GetComponent<Collider2D>().enabled = false;
+                GetComponent<Rigidbody2D>().isKinematic = true;
+                GetComponent<PlayerController>().enabled = false;
+                GetComponent<PlayerController>().animator.SetTrigger("Idle");
+
+            }
 
         }
     }

@@ -10,7 +10,8 @@ public class Guard_PistolControll : MonoBehaviour
     Collider2D collider2d;
     Transform transform;
     Animator animator;
-    
+
+    MapBrain mapBrain;    
     float detectionRate = 0;
     public string patrolType;
     string persuitType = "Focused";
@@ -48,8 +49,6 @@ public class Guard_PistolControll : MonoBehaviour
     public AudioSource audio1;
     public AudioSource audio2;
 
-    public AudioClip shotSound;
-
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -67,6 +66,7 @@ public class Guard_PistolControll : MonoBehaviour
         patrolPost2 = Posts[Random.Range(0, Posts.Length)];
 
         currentPost = patrolPost1.GetComponent<Transform>();
+        mapBrain = GameObject.Find("MapBrain").GetComponent<MapBrain>();
     }
 
     void FixedUpdate()
@@ -96,9 +96,9 @@ public class Guard_PistolControll : MonoBehaviour
         animator.SetFloat("MoveY", rigidbody2d.velocity.y);
 
         if ( rigidbody2d.velocity.x <= .01f )
-            transform.localScale = new Vector3( Mathf.Abs(transform.localScale.x), transform.localScale.y, 0 );
+            GetComponent<SpriteRenderer>().flipX = false;
         else if ( rigidbody2d.velocity.x >= -.01f )
-            transform.localScale = new Vector3( -Mathf.Abs(transform.localScale.x), transform.localScale.y, 0 );
+            GetComponent<SpriteRenderer>().flipX = true;
 
         if (rigidbody2d.velocity.x != 0 || rigidbody2d.velocity.y != 0)
         {
@@ -257,10 +257,10 @@ public class Guard_PistolControll : MonoBehaviour
         Transform tempBulletTransform = tempBullet.GetComponent<Transform>();
         tempBullet.GetComponent<Rigidbody2D>().AddForce(tempBulletTransform.right * bulletSpeed, ForceMode2D.Impulse);
 
-        audio2.clip = shotSound;
         audio2.Play();
 
         canShoot = false;
+        mapBrain.SetInsanityLevel(.2f);
     }
 
     public void ReachedPost()
@@ -303,6 +303,8 @@ public class Guard_PistolControll : MonoBehaviour
             animator.SetTrigger("Dead");
         else
             animator.SetTrigger("Hit");
+
+        mapBrain.SetInsanityLevel(.05f);
     }
 
     void OnDrawGizmosSelected()

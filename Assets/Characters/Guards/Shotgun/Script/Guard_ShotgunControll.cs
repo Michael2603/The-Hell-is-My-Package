@@ -11,6 +11,7 @@ public class Guard_ShotgunControll : MonoBehaviour
     Transform transform;
     Animator animator;
     
+    MapBrain mapBrain;
     float detectionRate = 0;
     public string patrolType;
     string persuitType = "Focused";
@@ -46,6 +47,9 @@ public class Guard_ShotgunControll : MonoBehaviour
     bool reachedEndOfPath = false;
     Seeker seeker;
 
+    public AudioSource audio1;
+    public AudioSource audio2;
+
     ParticleSystem particleSystem;
 
     void Start()
@@ -66,6 +70,7 @@ public class Guard_ShotgunControll : MonoBehaviour
         patrolPost2 = Posts[Random.Range(0, Posts.Length)];
 
         currentPost = patrolPost1.GetComponent<Transform>();
+        mapBrain = GameObject.Find("MapBrain").GetComponent<MapBrain>();
     }
 
     void FixedUpdate()
@@ -92,14 +97,20 @@ public class Guard_ShotgunControll : MonoBehaviour
         }
 
         if ( rigidbody2d.velocity.x <= .01f )
-            transform.localScale = new Vector3( Mathf.Abs(transform.localScale.x), transform.localScale.y, 0 );
+            GetComponent<SpriteRenderer>().flipX = false;
         else if ( rigidbody2d.velocity.x >= -.01f )
-            transform.localScale = new Vector3( -Mathf.Abs(transform.localScale.x), transform.localScale.y, 0 );
+            GetComponent<SpriteRenderer>().flipX = true;
 
         animator.SetFloat("MoveX", rigidbody2d.velocity.x);
         animator.SetFloat("MoveY", rigidbody2d.velocity.y);
 
         HealthManager();
+
+        if (rigidbody2d.velocity.x != 0 || rigidbody2d.velocity.y != 0)
+        {
+            if (!audio1.isPlaying)
+            audio1.Play();
+        }
     }
 
     //Controls the detection mechanics
@@ -249,7 +260,10 @@ public class Guard_ShotgunControll : MonoBehaviour
         shape.rotation = Vector3.forward * Angle;
         particleSystem.Play();
 
+        audio2.Play();
         canShoot = false;
+
+        mapBrain.SetInsanityLevel(.2f);
     }
 
     public void ReachedPost()
@@ -287,6 +301,8 @@ public class Guard_ShotgunControll : MonoBehaviour
             animator.SetTrigger("Dead");
         else
             animator.SetTrigger("Hit");
+
+        mapBrain.SetInsanityLevel(.1f);
     }
 
     void OnParticleCollision(GameObject other)

@@ -38,6 +38,8 @@ public class PostmanController : MonoBehaviour
     [SerializeField] float letterSpeed;
     bool canShoot = true;
 
+    MapBrain mapBrain;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -50,6 +52,7 @@ public class PostmanController : MonoBehaviour
         waitingPoints = GameObject.FindGameObjectsWithTag("WaitingPoint");
         deliveryPoints = GameObject.FindGameObjectsWithTag("DeliveryPoint");
         target = waitingPoints[Random.Range(0, waitingPoints.Length)].gameObject.GetComponent<Transform>();
+        mapBrain = GameObject.Find("MapBrain").GetComponent<MapBrain>();
 
         InvokeRepeating("UpdatePath", 0, .5f);
 
@@ -92,6 +95,11 @@ public class PostmanController : MonoBehaviour
             coll.enabled = false;
             specialPostman = false;
         }
+
+        if ( rigidbody2d.velocity.x <= .01f )
+            GetComponent<SpriteRenderer>().flipX = false;
+        else if ( rigidbody2d.velocity.x >= -.01f )
+            GetComponent<SpriteRenderer>().flipX = true;
     }
 
     void TrackPackage()
@@ -99,7 +107,7 @@ public class PostmanController : MonoBehaviour
         if (transform.childCount > 1)
         {
             state = "DeliveryPackage";
-            target = deliveryPoints[Random.Range(0, deliveryPoints.Length)].GetComponent<Transform>();
+            target = waitingPoints[Random.Range(0, waitingPoints.Length)].gameObject.GetComponent<Transform>();
         }
 
         Collider2D checkZone = Physics2D.OverlapCircle(rigidbody2d.position, 10, 1 << LayerMask.NameToLayer("Box"));
@@ -121,7 +129,10 @@ public class PostmanController : MonoBehaviour
         GoAfterTarget();
 
         if (reachedEndOfPath && transform.childCount == 0)
+        {
             state = "TrackPackage";
+            target = waitingPoints[Random.Range(0, waitingPoints.Length)].gameObject.GetComponent<Transform>();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -228,6 +239,8 @@ public class PostmanController : MonoBehaviour
             animator.SetTrigger("Dead");
         else
             animator.SetTrigger("Hit");
+
+        mapBrain.SetInsanityLevel(.07f);
 
     }
 

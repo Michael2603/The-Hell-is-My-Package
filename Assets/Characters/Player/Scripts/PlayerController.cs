@@ -6,14 +6,16 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
+    public MapBrain mapBrain;
     [SerializeField] GameObject PauseMenu;
+    [SerializeField] GameObject DeathMenu;
     [SerializeField] GameObject GameHud;
     ItemsManager itemsMg;
 
     Rigidbody2D rigidbody2d;
     Transform transform;
     [SerializeField] float moveSpeed;
-    Animator animator;
+    [HideInInspector] public Animator animator;
 
     [HideInInspector] public bool canReceiveInput;
     [HideInInspector] public bool inputReceived;
@@ -27,6 +29,10 @@ public class PlayerController : MonoBehaviour
     public AudioClip takeDamage1;
     public AudioClip takeDamage2;
     public AudioClip takeDamage3;
+    public AudioClip deathSound;
+    public AudioClip gameOverSound;
+    bool playOnce = false;
+    bool playOnce2 = false;
 
     public float checkBoxTimer;
     GameObject boxCheckLocked;
@@ -199,7 +205,6 @@ public class PlayerController : MonoBehaviour
     {
         switch (sound)
         {
-            
             case "CheckBox":
                 audio2.clip = checkBox;
             break;
@@ -218,7 +223,6 @@ public class PlayerController : MonoBehaviour
             case "Attack 2":
                 audio2.clip = atk2;
             break;
-
         }
         audio2.Play();
     }
@@ -233,6 +237,11 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("Dead");
             this.dead = true;
+            if (!playOnce2)
+            {
+                audio.clip = deathSound;
+                playOnce2 = true;
+            }
         }
     }
 
@@ -282,4 +291,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ShowDeathMenu()
+    {
+        DeathMenu.SetActive(true);
+        GameHud.SetActive(true);
+        mapBrain.music.Stop();
+
+        if (!playOnce)
+        {
+            audio2.clip = gameOverSound;
+            audio2.Play();
+            playOnce = true;
+        }
+    }
 }

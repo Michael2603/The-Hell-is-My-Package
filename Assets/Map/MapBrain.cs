@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Universal;
+using UnityEngine.SceneManagement;
 
 public class MapBrain : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class MapBrain : MonoBehaviour
     [SerializeField] List<SpawnControll> postmanSpawnsControll = new List<SpawnControll>();
     [SerializeField] GuardSpawnControll guardsSpawnControll;
     [SerializeField] List<BoxSpawnController> boxSpawnControllers = new List<BoxSpawnController>();
+    [SerializeField] List<BoxController> CandidateBoxes = new List<BoxController>();
 
     [SerializeField] GameObject PauseHud;
     [SerializeField] GameObject OptionsHud;
@@ -33,6 +35,15 @@ public class MapBrain : MonoBehaviour
     [SerializeField] GameObject LightingButton;
     [SerializeField] Sprite lightOn;
     [SerializeField] Sprite lightOff;
+    public AudioSource music;
+
+    [SerializeField] AudioSource selectedButton;
+
+    void Start()
+    {
+        CandidateBoxes[Random.Range(0,CandidateBoxes.Count)].SelectedPackage();
+        music.Play();
+    }
 
     void Update()
     {
@@ -114,7 +125,7 @@ public class MapBrain : MonoBehaviour
                 boxTimer = 20;
             }
         }
-        else if (insanityLevel >= 3 && insanityLevel <= 4)
+        else if (insanityLevel >= 3)
         {
             if (guardTimer <= 0) // Spanw a guard
             {
@@ -160,6 +171,11 @@ public class MapBrain : MonoBehaviour
         OptionsHud.SetActive(false);
     }
 
+    public void SelectedSound()
+    {
+        selectedButton.Play();
+    }
+
     public void ImprovedLighting()
     {
         UniversalScript.betterLightin = !UniversalScript.betterLightin;
@@ -177,5 +193,15 @@ public class MapBrain : MonoBehaviour
     public void MasterSound()
     {
         UniversalScript.soundVolume = soundBar.value;
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(1);
     }
 }
