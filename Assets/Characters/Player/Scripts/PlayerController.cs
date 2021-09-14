@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Collider2D BackAtk;
 
 
-    int health = 5;
+    int health = 3;
     bool dead = false;
     [SerializeField] Slider slider;
     
@@ -94,7 +94,6 @@ public class PlayerController : MonoBehaviour
         }
 
         MovementSystem();
-        ObjectiveController();
         HealthManager();
     }
 
@@ -127,6 +126,7 @@ public class PlayerController : MonoBehaviour
                 if (!audio2.isPlaying)
                 {
                     PlaySound("CheckBox");
+                    boxCheckLocked.gameObject.GetComponent<BoxController>().StartParticle();
                 }
             }
 
@@ -139,6 +139,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonUp(1))
         {
             checkBoxTimer = 4;
+            boxCheckLocked.gameObject.GetComponent<BoxController>().StopParticle();
             boxCheckLocked = null;
             if (audio2.isPlaying)
                 audio2.Stop();
@@ -164,19 +165,6 @@ public class PlayerController : MonoBehaviour
             if ( package )
                 itemsMg.PickPackage(package.transform.gameObject);
         }
-    }
-
-    void ObjectiveController()
-    {
-        if (itemsMg.invoice)
-        {
-            Debug.Log("You got the invoice, put it on your package and send it to your home. Wops... you dont have your package. TAKE IT!");
-        }
-        else if (itemsMg.myPackage)
-        {
-            Debug.Log("Now GO send it yourself!");
-        }
-
     }
 
     void HealthManager()
@@ -233,8 +221,9 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("Hit");
         PlaySound("Damaged");
 
-        if (this.health <= 2)
+        if (this.health <= 0)
         {
+            slider.value = 0;
             animator.SetTrigger("Dead");
             this.dead = true;
             if (!playOnce2)

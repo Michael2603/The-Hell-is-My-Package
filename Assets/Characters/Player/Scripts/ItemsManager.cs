@@ -8,6 +8,7 @@ public class ItemsManager : MonoBehaviour
 
     public bool invoice = false;
     public bool myPackage = false;
+    public bool sent = false;
 
     public void PickPackage(GameObject item)
     {
@@ -39,7 +40,7 @@ public class ItemsManager : MonoBehaviour
                 GetComponent<Rigidbody2D>().isKinematic = true;
                 GetComponent<PlayerController>().enabled = false;
                 GetComponent<PlayerController>().animator.SetTrigger("Idle");
-
+                sent = true;
             }
 
         }

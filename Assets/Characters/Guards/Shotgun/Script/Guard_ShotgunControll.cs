@@ -157,7 +157,7 @@ public class Guard_ShotgunControll : MonoBehaviour
             case "Idle":
                 rigidbody2d.velocity = new Vector3 (0,0,0);
 
-                Collider2D checkZone = Physics2D.OverlapCircle(transform.position, 10, 1 << LayerMask.NameToLayer("Player"));
+                Collider2D checkZone = Physics2D.OverlapCircle(transform.position, 17, 1 << LayerMask.NameToLayer("Player"));
                 if ( checkZone && detectionRate < 1.1)
                 {
                     detectionRate += Time.deltaTime * .8f;
@@ -188,7 +188,7 @@ public class Guard_ShotgunControll : MonoBehaviour
                 GoAfterTarget();
 
 
-                Collider2D checkZon = Physics2D.OverlapCircle(transform.position, 7, 1 << LayerMask.NameToLayer("Player"));
+                Collider2D checkZon = Physics2D.OverlapCircle(transform.position, 13, 1 << LayerMask.NameToLayer("Player"));
                 if ( checkZon && detectionRate < 1)
                 {
                     detectionRate += Time.deltaTime * .8f;
@@ -251,14 +251,22 @@ public class Guard_ShotgunControll : MonoBehaviour
 
     void Shoot(Transform player)
     {
-        particleSystem.Play();
-        // Returns player's angle relative to guard's position
-        Vector3 relative = transform.InverseTransformPoint(player.position);
-        float Angle = Mathf.Atan2(relative.y, relative.x) * Mathf.Rad2Deg;
-        var shape = particleSystem.shape;
 
-        shape.rotation = Vector3.forward * Angle;
-        particleSystem.Play();
+        for (int i = 0; i < 5; i++)
+        {
+            // Returns player's angle relative to guard's position
+            Vector3 relative = transform.InverseTransformPoint(player.position);
+            float Angle = Mathf.Atan2(Random.Range(relative.y - .3f, relative.y + .3f), relative.x) * Mathf.Rad2Deg;
+            rotationTransform.rotation = Quaternion.Euler(Vector3.forward * Angle);
+
+            GameObject tempBullet = Instantiate(this.bullet, bulletEmitter.position, rotationTransform.rotation);
+            Transform tempBulletTransform = tempBullet.GetComponent<Transform>();
+            tempBullet.GetComponent<Rigidbody2D>().AddForce(tempBulletTransform.right * bulletSpeed, ForceMode2D.Impulse);
+        }
+        
+        // GameObject tempBullet2 = Instantiate(this.bullet, bulletEmitter.position, rotationTransform.rotation);
+        // Transform tempBulletTransform2 = tempBullet2.GetComponent<Transform>();
+        // tempBullet2.GetComponent<Rigidbody2D>().AddForce(tempBulletTransform2.right * bulletSpeed, ForceMode2D.Impulse);
 
         audio2.Play();
         canShoot = false;

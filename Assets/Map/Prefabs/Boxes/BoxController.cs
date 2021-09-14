@@ -10,9 +10,12 @@ public class BoxController : MonoBehaviour
     public bool playersBox = false;
     public ItemsManager items;
 
+    ParticleSystem particles;
+
     void Start()
     {
         items = GameObject.Find("Player").GetComponent<ItemsManager>();
+        particles = GetComponent<ParticleSystem>();
     }
 
     public void Openned()
@@ -46,5 +49,14 @@ public class BoxController : MonoBehaviour
     public void Untarget(string name)
     {
         targetedID = 0;
+    }
+
+    public void StartParticle()
+    {
+        particles.Play();
+    }
+    public void StopParticle()
+    {
+        particles.Stop();
     }
 }

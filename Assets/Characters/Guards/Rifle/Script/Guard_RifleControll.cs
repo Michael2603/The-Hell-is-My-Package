@@ -36,7 +36,10 @@ public class Guard_RifleControll : MonoBehaviour
     [SerializeField] float shootTimer;
     float Timer;
     bool canShoot = true;
-    // bool finalizedShooting
+    int bulletCount = 4;
+    Transform playersPositionRound;
+    [SerializeField] float roundTimer;
+    float subTimer;
 
     public Transform target;
     public Transform currentPost;
@@ -94,10 +97,7 @@ public class Guard_RifleControll : MonoBehaviour
                 canShoot = true;
             }
         }
-
-        // if ()
-        //     Shoot();
-
+        
         if ( rigidbody2d.velocity.x <= .01f )
             GetComponent<SpriteRenderer>().flipX = false;
         else if ( rigidbody2d.velocity.x >= -.01f )
@@ -112,6 +112,23 @@ public class Guard_RifleControll : MonoBehaviour
         {
             if (!audio1.isPlaying)
             audio1.Play();
+        }
+
+        if (bulletCount != 4)
+        {
+            subTimer -= Time.deltaTime;
+
+            if (subTimer <= 0)
+            {
+                Shoot(playersPositionRound);
+                subTimer = roundTimer;
+            }
+
+            if (bulletCount <= 0)
+            {
+                bulletCount = 4;
+                playersPositionRound = null;
+            }
         }
     }
 
@@ -253,6 +270,9 @@ public class Guard_RifleControll : MonoBehaviour
 
     void Shoot(Transform player)
     {
+        bulletCount--;
+        playersPositionRound = Physics2D.OverlapCircle(transform.position, 30, 1 << LayerMask.NameToLayer("Player")).gameObject.GetComponent<Transform>();
+        
         // Returns player's angle relative to guard's position
         Vector3 relative = transform.InverseTransformPoint(player.position);
         float Angle = Mathf.Atan2(relative.y, relative.x) * Mathf.Rad2Deg;
