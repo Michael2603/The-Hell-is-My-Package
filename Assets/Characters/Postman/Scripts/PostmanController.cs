@@ -111,7 +111,7 @@ public class PostmanController : MonoBehaviour
         }
 
         Collider2D checkZone = Physics2D.OverlapCircle(rigidbody2d.position, 10, 1 << LayerMask.NameToLayer("Box"));
-        if (checkZone != null)
+        if (checkZone != null && checkZone.gameObject.GetComponent<BoxController>().playersBox == false)
         {
             box = checkZone.gameObject.GetComponent<Transform>();
                     

@@ -6,6 +6,7 @@ public class TruckController : MonoBehaviour
 {
     Rigidbody2D rigidbody2d;
     Transform transform;
+    public MapBrain mapBrain;
 
     public AudioClip departSound;
     bool departing = false;
@@ -19,7 +20,13 @@ public class TruckController : MonoBehaviour
 
     private void Update() {
         if (departing)
+        {
             Depart();
+            if ( transform.position.x <= -100 )
+            {
+                mapBrain.Win();
+            }
+        }
     }
 
     public void Depart()

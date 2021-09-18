@@ -50,11 +50,15 @@ public class PlayerController : MonoBehaviour
     int health = 3;
     bool dead = false;
     [SerializeField] Slider slider;
+    [SerializeField] Gradient gradient;
+    [SerializeField] Image fill;
     
     public Vector3 direction; // Used to keep the direction the player is looking at
     float moveX;
     float moveY;
     float idleTimer;
+
+    bool locked = true;
 
     void Awake()
     {
@@ -70,6 +74,9 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (locked)
+            return;
+            
         if (dead)
         {
             rigidbody2d.velocity = new Vector3(0,0,0);
@@ -170,6 +177,7 @@ public class PlayerController : MonoBehaviour
     void HealthManager()
     {
         slider.value = health;
+        fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 
     void CheckPackage(GameObject box)
@@ -285,6 +293,7 @@ public class PlayerController : MonoBehaviour
         DeathMenu.SetActive(true);
         GameHud.SetActive(true);
         mapBrain.music.Stop();
+        animator.enabled = false;
 
         if (!playOnce)
         {
@@ -292,5 +301,10 @@ public class PlayerController : MonoBehaviour
             audio2.Play();
             playOnce = true;
         }
+    }
+
+    public void UnlockPlayer()
+    {
+        locked = false;
     }
 }

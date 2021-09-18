@@ -29,6 +29,7 @@ public class MapBrain : MonoBehaviour
     [SerializeField] GameObject PauseHud;
     [SerializeField] GameObject OptionsHud;
     [SerializeField] GameObject GameHud;
+    [SerializeField] GameObject WinHud;
 
     [SerializeField] Slider soundBar;
 
@@ -203,5 +204,15 @@ public class MapBrain : MonoBehaviour
     public void Retry()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void Win()
+    {
+        foreach (AudioSource soundEmitter in GameObject.FindObjectsOfType<AudioSource>())
+        {
+            if (soundEmitter.gameObject.name != "Background")
+                soundEmitter.enabled = false;
+        }
+        WinHud.SetActive(true);
     }
 }

@@ -10,6 +10,8 @@ public class ItemsManager : MonoBehaviour
     public bool myPackage = false;
     public bool sent = false;
 
+    public TaskListController tasks;
+
     public void PickPackage(GameObject item)
     {
         if (item.layer != 1 << LayerMask.NameToLayer("Box"))
@@ -22,14 +24,16 @@ public class ItemsManager : MonoBehaviour
     public void GotTheInvoice()
     {
         this.invoice = true;
+        tasks.Drop();
     }
 
     public void GotMyPackage()
     {
         this.myPackage = true;
+        tasks.Drop();
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionStay2D(Collision2D other)
     {
         if ( myPackage == true && invoice == true )
         {
@@ -42,7 +46,6 @@ public class ItemsManager : MonoBehaviour
                 GetComponent<PlayerController>().animator.SetTrigger("Idle");
                 sent = true;
             }
-
         }
     }
 }

@@ -12,6 +12,8 @@ public class TaskListController : MonoBehaviour
     public GameObject checkBox3;
     public GameObject check3;
 
+    bool down = false;
+
     void Update()
     {
         if ( itemsMg.invoice )
@@ -25,5 +27,39 @@ public class TaskListController : MonoBehaviour
 
         if ( itemsMg.sent )
             check3.SetActive(true);
+
+        Rigidbody2D rigidbody2d= GetComponent<Rigidbody2D>();
+        if ( !down )
+        {
+            if ( GetComponent<RectTransform>().localPosition.y <= 690 )
+            {
+                rigidbody2d.velocity = new Vector3(rigidbody2d.velocity.x, 609, 0);
+            }
+            else
+            {
+                rigidbody2d.velocity = new Vector3(rigidbody2d.velocity.x, 0, 0);
+            }
+        }
+        else
+        {
+            if ( GetComponent<RectTransform>().localPosition.y >= 334 )
+            {
+                rigidbody2d.velocity = new Vector3(rigidbody2d.velocity.x, -709, 0);
+            }
+            else
+            {
+                rigidbody2d.velocity = new Vector3(rigidbody2d.velocity.x, 0, 0);
+            }
+        }
+    }
+
+    public void Drop()
+    {
+        down = true;
+    }
+    
+    public void Hide()
+    {
+        down = false;
     }
 }
