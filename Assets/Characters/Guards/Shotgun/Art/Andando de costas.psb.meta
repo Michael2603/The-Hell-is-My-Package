@@ -25,6 +25,7 @@ ScriptedImporter:
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
     vTOnly: 0
+    ignoreMasterTextureLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
     spriteMode: 2
@@ -79,7 +80,6 @@ ScriptedImporter:
       width: 0
       height: 0
     spriteID: 
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -102,7 +102,6 @@ ScriptedImporter:
       width: 12
       height: 17
     spriteID: 43f5c7d576c435b4c982c3656d05799b
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -124,7 +123,6 @@ ScriptedImporter:
       width: 12
       height: 17
     spriteID: f08d9249ed07bd64ea9d5719acada98e
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -146,7 +144,6 @@ ScriptedImporter:
       width: 12
       height: 17
     spriteID: cb03ba1d6f5e6ac48bb3e74b6c1a92dc
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -168,7 +165,6 @@ ScriptedImporter:
       width: 12
       height: 17
     spriteID: eb29ff460c606d94aaeb10380ba25309
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -190,7 +186,6 @@ ScriptedImporter:
       width: 0
       height: 0
     spriteID: a42c9bf7116690b4ea27071690eeb788
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -213,7 +208,6 @@ ScriptedImporter:
       width: 12
       height: 17
     spriteID: 4c25fd53c1a761e41af2e2e9e0e08d21
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -235,7 +229,6 @@ ScriptedImporter:
       width: 12
       height: 17
     spriteID: 13f377c10e8cf73469f9ec992d48d010
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -257,7 +250,6 @@ ScriptedImporter:
       width: 12
       height: 17
     spriteID: a9a32db5b20393e49a5011095e70c3df
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -279,7 +271,6 @@ ScriptedImporter:
       width: 12
       height: 17
     spriteID: 828393cb0a1eff942b1f87c9645b668d
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -301,7 +292,6 @@ ScriptedImporter:
       width: 0
       height: 0
     spriteID: 1f80ad88077a8a84c9d3bcd6f5d601e9
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -327,24 +317,35 @@ ScriptedImporter:
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
+    textureCompression: 2
+    compressionQuality: 100
     forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   - name: Standalone
     overridden: 0
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
+    textureCompression: 2
+    compressionQuality: 100
     forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 100
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   mosaicLayers: 1
@@ -352,16 +353,13 @@ ScriptedImporter:
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 64
-  importedTextureHeight: 64
-  documentSize: {x: 19, y: 17}
+  layerMappingOption: 2
+  generatePhysicsShape: 0
   paperDollMode: 0
   keepDupilcateSpriteName: 1
   skeletonAssetReferenceID: 
   spriteCategoryList:
     categories: []
-  textureActualWidth: 64
-  textureActualHeight: 64
   spritePackingTag: 
   resliceFromLayer: 0
   mosaicPSDLayers:
@@ -369,9 +367,12 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 00000000000000000000000000000000
+    spriteID: 6b959c4e551b98847974d6097c08b7ad
     layerID: 112
     mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
   - name: 4
     spriteName: 4
     isGroup: 0
@@ -379,6 +380,9 @@ ScriptedImporter:
     spriteID: 43f5c7d576c435b4c982c3656d05799b
     layerID: 111
     mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: 3
     spriteName: 3
     isGroup: 0
@@ -386,6 +390,9 @@ ScriptedImporter:
     spriteID: f08d9249ed07bd64ea9d5719acada98e
     layerID: 110
     mosaicPosition: {x: 24, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: 2
     spriteName: 2
     isGroup: 0
@@ -393,6 +400,9 @@ ScriptedImporter:
     spriteID: cb03ba1d6f5e6ac48bb3e74b6c1a92dc
     layerID: 109
     mosaicPosition: {x: 44, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: 1
     spriteName: 1
     isGroup: 0
@@ -400,6 +410,9 @@ ScriptedImporter:
     spriteID: eb29ff460c606d94aaeb10380ba25309
     layerID: 108
     mosaicPosition: {x: 4, y: 29}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Camada 1
     spriteName: Camada 1
     isGroup: 0
@@ -407,6 +420,9 @@ ScriptedImporter:
     spriteID: a42c9bf7116690b4ea27071690eeb788
     layerID: 9
     mosaicPosition: {x: 24, y: 29}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   rigPSDLayers:
   - name: Andando de costas
     spriteName: 
@@ -415,6 +431,9 @@ ScriptedImporter:
     spriteID: 
     layerID: 112
     mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   - name: 4
     spriteName: 4
     isGroup: 0
@@ -422,6 +441,9 @@ ScriptedImporter:
     spriteID: 4c25fd53c1a761e41af2e2e9e0e08d21
     layerID: 111
     mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   - name: 3
     spriteName: 3
     isGroup: 0
@@ -429,6 +451,9 @@ ScriptedImporter:
     spriteID: 13f377c10e8cf73469f9ec992d48d010
     layerID: 110
     mosaicPosition: {x: 24, y: 4}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   - name: 2
     spriteName: 2
     isGroup: 0
@@ -436,6 +461,9 @@ ScriptedImporter:
     spriteID: a9a32db5b20393e49a5011095e70c3df
     layerID: 109
     mosaicPosition: {x: 44, y: 4}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   - name: 1
     spriteName: 1
     isGroup: 0
@@ -443,6 +471,9 @@ ScriptedImporter:
     spriteID: 828393cb0a1eff942b1f87c9645b668d
     layerID: 108
     mosaicPosition: {x: 4, y: 29}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   - name: Camada 1
     spriteName: Camada 1
     isGroup: 0
@@ -450,7 +481,11 @@ ScriptedImporter:
     spriteID: 1f80ad88077a8a84c9d3bcd6f5d601e9
     layerID: 9
     mosaicPosition: {x: 24, y: 29}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
   generateGOHierarchy: 0
   textureAssetName: Andando de costas Texture
   prefabAssetName: Andando de costas Prefab

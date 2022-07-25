@@ -25,6 +25,7 @@ ScriptedImporter:
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
     vTOnly: 0
+    ignoreMasterTextureLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
     spriteMode: 2
@@ -79,7 +80,6 @@ ScriptedImporter:
       width: 0
       height: 0
     spriteID: 
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -102,7 +102,6 @@ ScriptedImporter:
       width: 182
       height: 204
     spriteID: 3667f527d4d3f1c42a843bdc6942358d
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -124,7 +123,6 @@ ScriptedImporter:
       width: 256
       height: 100
     spriteID: e7b4ca93ae7773749af32ade566dbf78
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -146,7 +144,6 @@ ScriptedImporter:
       width: 487
       height: 99
     spriteID: 360a9263fb94bb34caf60397876ff983
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -169,7 +166,6 @@ ScriptedImporter:
       width: 182
       height: 204
     spriteID: 681f1fed29da3fc41931bdaaaf073760
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -191,7 +187,6 @@ ScriptedImporter:
       width: 256
       height: 100
     spriteID: b536f6d3bc4bfcf4cb80c07bc1aac857
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -213,7 +208,6 @@ ScriptedImporter:
       width: 487
       height: 99
     spriteID: 5ef4f545ec4fd03489194df72c2eef55
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -239,24 +233,35 @@ ScriptedImporter:
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
+    textureCompression: 2
+    compressionQuality: 100
     forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   - name: Standalone
     overridden: 0
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
+    textureCompression: 2
+    compressionQuality: 100
     forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 100
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   mosaicLayers: 1
@@ -264,16 +269,13 @@ ScriptedImporter:
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 512
-  importedTextureHeight: 512
-  documentSize: {x: 3000, y: 1686}
+  layerMappingOption: 2
+  generatePhysicsShape: 0
   paperDollMode: 0
   keepDupilcateSpriteName: 1
   skeletonAssetReferenceID: 
   spriteCategoryList:
     categories: []
-  textureActualWidth: 512
-  textureActualHeight: 512
   spritePackingTag: 
   resliceFromLayer: 0
   mosaicPSDLayers:
@@ -284,6 +286,9 @@ ScriptedImporter:
     spriteID: 3667f527d4d3f1c42a843bdc6942358d
     layerID: 41
     mosaicPosition: {x: 4, y: 111}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: 'Exit '
     spriteName: 'Exit '
     isGroup: 0
@@ -291,6 +296,9 @@ ScriptedImporter:
     spriteID: e7b4ca93ae7773749af32ade566dbf78
     layerID: 42
     mosaicPosition: {x: 194, y: 111}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Options
     spriteName: Options
     isGroup: 0
@@ -298,6 +306,9 @@ ScriptedImporter:
     spriteID: 360a9263fb94bb34caf60397876ff983
     layerID: 43
     mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   rigPSDLayers:
   - name: Pause
     spriteName: Pause
@@ -306,6 +317,9 @@ ScriptedImporter:
     spriteID: 681f1fed29da3fc41931bdaaaf073760
     layerID: 41
     mosaicPosition: {x: 4, y: 111}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   - name: 'Exit '
     spriteName: 'Exit '
     isGroup: 0
@@ -313,6 +327,9 @@ ScriptedImporter:
     spriteID: b536f6d3bc4bfcf4cb80c07bc1aac857
     layerID: 42
     mosaicPosition: {x: 194, y: 111}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   - name: Options
     spriteName: Options
     isGroup: 0
@@ -320,7 +337,11 @@ ScriptedImporter:
     spriteID: 5ef4f545ec4fd03489194df72c2eef55
     layerID: 43
     mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
   generateGOHierarchy: 0
   textureAssetName: Pause Texture
   prefabAssetName: Pause Prefab

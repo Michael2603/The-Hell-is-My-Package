@@ -25,6 +25,7 @@ ScriptedImporter:
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
     vTOnly: 0
+    ignoreMasterTextureLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
     spriteMode: 2
@@ -79,7 +80,6 @@ ScriptedImporter:
       width: 0
       height: 0
     spriteID: 
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -90,6 +90,27 @@ ScriptedImporter:
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData:
+  - name: Game over
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1729
+      height: 255
+    spriteID: 598c2f68cd5c1f84f8a5fa9751f4fb85
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -564, y: -817}
   - name: retry
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -102,7 +123,6 @@ ScriptedImporter:
       width: 382
       height: 102
     spriteID: f6236c425cada8340994f492af1837ec
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -124,7 +144,6 @@ ScriptedImporter:
       width: 850
       height: 102
     spriteID: 28526be6454616c4684753376135a731
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -134,28 +153,6 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -1000, y: -22}
-  - name: Game over
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 1729
-      height: 255
-    spriteID: 598c2f68cd5c1f84f8a5fa9751f4fb85
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -564, y: -817}
   rigSpriteImportData:
   - name: retry
     originalName: 
@@ -169,7 +166,6 @@ ScriptedImporter:
       width: 382
       height: 102
     spriteID: 2667934645096734c939c73815ff93e8
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -191,7 +187,6 @@ ScriptedImporter:
       width: 850
       height: 102
     spriteID: c4323dab58178724a936e931cffcf9cb
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -213,7 +208,6 @@ ScriptedImporter:
       width: 2769
       height: 1538
     spriteID: 65fbeeddebc09b44483e678c47086c2d
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -239,24 +233,35 @@ ScriptedImporter:
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
-    compressionQuality: 0
+    compressionQuality: 100
     forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   - name: Standalone
     overridden: 0
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
-    compressionQuality: 0
+    compressionQuality: 100
     forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 100
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   mosaicLayers: 1
@@ -264,16 +269,13 @@ ScriptedImporter:
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 2048
-  importedTextureHeight: 512
-  documentSize: {x: 2769, y: 1538}
+  layerMappingOption: 2
+  generatePhysicsShape: 0
   paperDollMode: 0
   keepDupilcateSpriteName: 1
   skeletonAssetReferenceID: 
   spriteCategoryList:
     categories: []
-  textureActualWidth: 2048
-  textureActualHeight: 512
   spritePackingTag: 
   resliceFromLayer: 0
   mosaicPSDLayers:
@@ -284,6 +286,19 @@ ScriptedImporter:
     spriteID: 598c2f68cd5c1f84f8a5fa9751f4fb85
     layerID: 561
     mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Game over
+    spriteName: 
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 216
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   - name: retry
     spriteName: retry
     isGroup: 0
@@ -291,6 +306,9 @@ ScriptedImporter:
     spriteID: f6236c425cada8340994f492af1837ec
     layerID: 557
     mosaicPosition: {x: 862, y: 267}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: back to Menu
     spriteName: back to Menu
     isGroup: 0
@@ -298,6 +316,9 @@ ScriptedImporter:
     spriteID: 28526be6454616c4684753376135a731
     layerID: 558
     mosaicPosition: {x: 4, y: 267}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   rigPSDLayers:
   - name: retry
     spriteName: retry
@@ -306,6 +327,9 @@ ScriptedImporter:
     spriteID: 2667934645096734c939c73815ff93e8
     layerID: 557
     mosaicPosition: {x: 3639, y: 4}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   - name: back to Menu
     spriteName: back to Menu
     isGroup: 0
@@ -313,6 +337,9 @@ ScriptedImporter:
     spriteID: c4323dab58178724a936e931cffcf9cb
     layerID: 558
     mosaicPosition: {x: 2781, y: 4}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   - name: Game over
     spriteName: Game over
     isGroup: 0
@@ -320,7 +347,11 @@ ScriptedImporter:
     spriteID: 65fbeeddebc09b44483e678c47086c2d
     layerID: 216
     mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
   generateGOHierarchy: 0
   textureAssetName: Game over Texture
   prefabAssetName: Game over Prefab

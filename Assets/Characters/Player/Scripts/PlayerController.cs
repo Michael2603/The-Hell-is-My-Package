@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
     float moveY;
     float idleTimer;
 
-    bool locked = true;
+    [HideInInspector] public bool locked = true;
 
     void Awake()
     {
@@ -72,10 +72,35 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    public float moving;
+
+    void Update()
+    {
+        //Attacks
+        if (Input.GetMouseButtonDown(0))
+        {
+            if ( canReceiveInput )
+            {
+                inputReceived = true;
+                canReceiveInput = false;
+            }
+            else
+            {
+                return;
+            }
+        }
+    }
+
     void FixedUpdate()
     {
         if (locked)
+        {
+            rigidbody2d.velocity = new Vector3(0,0,0);
+            animator.SetFloat("Move X", 0);
+            animator.SetFloat("Move Y", 0);
+            animator.SetBool("Idle", true);
             return;
+        }
             
         if (dead)
         {
@@ -107,21 +132,9 @@ public class PlayerController : MonoBehaviour
     void MovementSystem()
     {
         rigidbody2d.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed);
+        
         VerifyDirection();
 
-        //Attacks
-        if (Input.GetMouseButtonDown(0))
-        {
-            if ( canReceiveInput )
-            {
-                inputReceived = true;
-                canReceiveInput = false;
-            }
-            else
-            {
-                return;
-            }
-        }
         // Check the package's content
         if (Input.GetMouseButton(1))
         {
@@ -145,7 +158,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(1))
         {
-            checkBoxTimer = 4;
+            checkBoxTimer = 2;
             boxCheckLocked.gameObject.GetComponent<BoxController>().StopParticle();
             boxCheckLocked = null;
             if (audio2.isPlaying)

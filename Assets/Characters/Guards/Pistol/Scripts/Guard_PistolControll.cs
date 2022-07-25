@@ -238,7 +238,6 @@ public class Guard_PistolControll : MonoBehaviour
                 }
                 else
                 {
-                    
                     detectionRate -= Time.deltaTime * .2f;
                     rigidbody2d.velocity = new Vector3(0,0,0);
                 }
@@ -251,7 +250,7 @@ public class Guard_PistolControll : MonoBehaviour
         // Returns player's angle relative to guard's position
         Vector3 relative = transform.InverseTransformPoint(player.position);
         float Angle = Mathf.Atan2(relative.y, relative.x) * Mathf.Rad2Deg;
-        rotationTransform.rotation = Quaternion.Euler(Vector3.forward * Angle);
+        rotationTransform.localRotation = Quaternion.Euler(Vector3.forward * Angle);
 
         GameObject tempBullet = Instantiate(this.bullet, bulletEmitter.position, rotationTransform.rotation);
         Transform tempBulletTransform = tempBullet.GetComponent<Transform>();

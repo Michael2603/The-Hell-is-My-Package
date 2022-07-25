@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Universal;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class MapBrain : MonoBehaviour
 {
     [SerializeField] GameObject Lamps;
-    public UnityEngine.Experimental.Rendering.Universal.Light2D globalLight;
+    public UnityEngine.Rendering.Universal.Light2D globalLight;
 
     [SerializeField] float insanityLevel = 0;
     public void SetInsanityLevel(float amount)
@@ -31,6 +32,8 @@ public class MapBrain : MonoBehaviour
     [SerializeField] GameObject GameHud;
     [SerializeField] GameObject WinHud;
 
+    [SerializeField] GameObject camera2Controller;
+
     [SerializeField] Slider soundBar;
 
     [SerializeField] GameObject LightingButton;
@@ -42,7 +45,10 @@ public class MapBrain : MonoBehaviour
 
     void Start()
     {
-        CandidateBoxes[Random.Range(0,CandidateBoxes.Count)].SelectedPackage();
+        int boxNum = Random.Range(0, CandidateBoxes.Count);
+        CandidateBoxes[boxNum].SelectedPackage();
+        camera2Controller.GetComponent<Cinemachine.CinemachineVirtualCamera>().m_LookAt = CandidateBoxes[boxNum].gameObject.transform;
+        camera2Controller.GetComponent<Cinemachine.CinemachineVirtualCamera>().m_Follow = CandidateBoxes[boxNum].gameObject.transform;
         music.Play();
     }
 
@@ -64,9 +70,15 @@ public class MapBrain : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if ( PauseHud.activeSelf )
+            {
                 this.BackToGame();
+                Time.timeScale = 1;
+            }
             else
+            {
                 this.PauseMenu();
+                Time.timeScale = 0;
+            }
         }
     }
 

@@ -12,15 +12,25 @@ public class TaskListController : MonoBehaviour
     public GameObject checkBox3;
     public GameObject check3;
 
-    bool down = false;
+    public GameObject extensionNote;
+    public GameObject packageImage;
+    public GameObject camera2;
+
+    bool down = true;
 
     void Update()
     {
         if ( itemsMg.invoice )
+        {
             check1.SetActive(true);
+            extensionNote.SetActive(true);
+        }
         
         if ( itemsMg.myPackage )
+        {
             check2.SetActive(true);
+            extensionNote.SetActive(false);
+        }
 
         if ( itemsMg.invoice && itemsMg.myPackage )
             checkBox3.SetActive(true);

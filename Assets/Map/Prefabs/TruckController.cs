@@ -22,7 +22,7 @@ public class TruckController : MonoBehaviour
         if (departing)
         {
             Depart();
-            if ( transform.position.x <= -100 )
+            if ( transform.position.x <= -100 || transform.position.x >= 115)
             {
                 mapBrain.Win();
             }

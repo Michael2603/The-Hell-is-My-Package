@@ -25,6 +25,7 @@ ScriptedImporter:
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
     vTOnly: 0
+    ignoreMasterTextureLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
     spriteMode: 2
@@ -79,7 +80,6 @@ ScriptedImporter:
       width: 0
       height: 0
     spriteID: 
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -102,7 +102,6 @@ ScriptedImporter:
       width: 1236
       height: 1267
     spriteID: 140c7bf11b59f3a40a4b3ef331363940
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -124,7 +123,6 @@ ScriptedImporter:
       width: 2099
       height: 1774
     spriteID: bb4a67aeb64c9154e8ff0d648e96d085
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -146,7 +144,6 @@ ScriptedImporter:
       width: 2543
       height: 2030
     spriteID: ac069be0941a26c4c8f6979f45022235
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -168,7 +165,6 @@ ScriptedImporter:
       width: 3000
       height: 2087
     spriteID: 8d8bcf5dcac46864ca1ea290d35fa209
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -191,7 +187,6 @@ ScriptedImporter:
       width: 1236
       height: 1267
     spriteID: a729b8ca58ebd6c4ca7416639860b119
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -213,7 +208,6 @@ ScriptedImporter:
       width: 2099
       height: 1774
     spriteID: 932e983f66fd00b4897f1e380f879067
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -235,7 +229,6 @@ ScriptedImporter:
       width: 2543
       height: 2030
     spriteID: 0276ce427f5685a4cbaac372e9016ea6
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -257,7 +250,6 @@ ScriptedImporter:
       width: 3000
       height: 2087
     spriteID: 1f3087b5779ff7b4ab9da1a7beaaafb5
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -308,16 +300,13 @@ ScriptedImporter:
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 1024
-  importedTextureHeight: 2048
-  documentSize: {x: 3000, y: 2087}
+  layerMappingOption: 2
+  generatePhysicsShape: 0
   paperDollMode: 0
   keepDupilcateSpriteName: 1
   skeletonAssetReferenceID: 
   spriteCategoryList:
     categories: []
-  textureActualWidth: 4096
-  textureActualHeight: 8192
   spritePackingTag: 
   resliceFromLayer: 0
   mosaicPSDLayers:
@@ -328,6 +317,9 @@ ScriptedImporter:
     spriteID: 140c7bf11b59f3a40a4b3ef331363940
     layerID: 2
     mosaicPosition: {x: 2555, y: 2099}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Camada 6
     spriteName: Camada 6
     isGroup: 0
@@ -335,6 +327,9 @@ ScriptedImporter:
     spriteID: bb4a67aeb64c9154e8ff0d648e96d085
     layerID: 8
     mosaicPosition: {x: 4, y: 4137}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Camada 7
     spriteName: Camada 7
     isGroup: 0
@@ -342,6 +337,9 @@ ScriptedImporter:
     spriteID: ac069be0941a26c4c8f6979f45022235
     layerID: 9
     mosaicPosition: {x: 4, y: 2099}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Plano de Fundo
     spriteName: Plano de Fundo
     isGroup: 0
@@ -349,6 +347,9 @@ ScriptedImporter:
     spriteID: 8d8bcf5dcac46864ca1ea290d35fa209
     layerID: 1
     mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   rigPSDLayers:
   - name: Camada 1
     spriteName: Camada 1
@@ -357,6 +358,9 @@ ScriptedImporter:
     spriteID: a729b8ca58ebd6c4ca7416639860b119
     layerID: 2
     mosaicPosition: {x: 2555, y: 2099}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   - name: Camada 6
     spriteName: Camada 6
     isGroup: 0
@@ -364,6 +368,9 @@ ScriptedImporter:
     spriteID: 932e983f66fd00b4897f1e380f879067
     layerID: 8
     mosaicPosition: {x: 4, y: 4137}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   - name: Camada 7
     spriteName: Camada 7
     isGroup: 0
@@ -371,6 +378,9 @@ ScriptedImporter:
     spriteID: 0276ce427f5685a4cbaac372e9016ea6
     layerID: 9
     mosaicPosition: {x: 4, y: 2099}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   - name: Plano de Fundo
     spriteName: Plano de Fundo
     isGroup: 0
@@ -378,7 +388,11 @@ ScriptedImporter:
     spriteID: 1f3087b5779ff7b4ab9da1a7beaaafb5
     layerID: 1
     mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
   generateGOHierarchy: 0
   textureAssetName: Nota fiscal Texture
   prefabAssetName: Nota fiscal Prefab
