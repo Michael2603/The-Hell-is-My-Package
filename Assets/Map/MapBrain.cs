@@ -67,7 +67,7 @@ public class MapBrain : MonoBehaviour
             globalLight.intensity = 1.2f;
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
             if ( PauseHud.activeSelf )
             {
